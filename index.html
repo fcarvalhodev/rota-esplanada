@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Rota Esplanada</title>
+<meta name="description" content="De onde vem cada programa e benefício federal desde a redemocratização: quem criou, quem ampliou, quem trocou o nome. Com fonte para cada item.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: same skeleton and type system as the hub and Rota Master (condensed Archivo display, Source Serif reading text, JetBrains Mono for dates and sources). Esplanada's own colour is cerrado red.
+   Order: hero → the map (every program as a lane across 1985–2026, coloured by the government behind each phase) → government by government → how a program is born → myths from both sides → verdict. */
+:root{
+  --bg:#f1efe9; --paper:#fbfaf6; --ink:#1b1d22; --muted:#5d6068; --line:#d8d4ca; --soft:#e7e4dc; --band:#e9e6de;
+  --accent:#a8431e; --accent-soft:#f5e3da;
+  --c-lula:#2a78d6; --c-dilma:#1baf7a; --c-outros:#eda100; --c-cf:#8a8c92;
+  --ok:#1f6b45; --ok-soft:#dcefe3; --no:#a12a2a; --no-soft:#f6dede; --part:#7a5a00; --part-soft:#f6ebc9;
+  --display:"Archivo","Arial Narrow",Impact,sans-serif;
+  --ui:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --text:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121316; --paper:#1a1b1e; --ink:#ecebe6; --muted:#a2a3a8; --line:#2d2f34; --soft:#232428; --band:#1f2023;
+  --accent:#e98a5f; --accent-soft:#3a2219;
+  --c-lula:#3987e5; --c-dilma:#199e70; --c-outros:#c98500; --c-cf:#6e7077;
+  --ok:#7fd3a3; --ok-soft:#173326; --no:#f19b9b; --no-soft:#3a1c1c; --part:#e8c25a; --part-soft:#3a3016; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121316; --paper:#1a1b1e; --ink:#ecebe6; --muted:#a2a3a8; --line:#2d2f34; --soft:#232428; --band:#1f2023;
+  --accent:#e98a5f; --accent-soft:#3a2219;
+  --c-lula:#3987e5; --c-dilma:#199e70; --c-outros:#c98500; --c-cf:#6e7077;
+  --ok:#7fd3a3; --ok-soft:#173326; --no:#f19b9b; --no-soft:#3a1c1c; --part:#e8c25a; --part-soft:#3a3016; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--text);font-size:17px;line-height:1.6}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:880px;margin:0 auto;padding-inline:16px}
+.kicker,.mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.kicker{color:var(--accent)}
+h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(64px,17vw,170px);line-height:.84;margin:0;text-transform:uppercase;overflow-wrap:anywhere}
+h2{font-family:var(--display);font-stretch:70%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;margin:0;text-transform:uppercase;text-wrap:balance}
+h3{font-family:var(--ui);font-weight:700;font-size:19px;line-height:1.2;margin:0;text-wrap:balance}
+p{margin:0}
+section{padding-block:48px 8px;display:grid;gap:18px}
+.lede{font-size:19px;max-width:62ch}
+.sub{color:var(--muted);max-width:62ch}
+header{padding-block:40px 8px;display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+section{grid-template-columns:minmax(0,1fr)}
+
+/* key */
+.key{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--mono);font-size:13px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:8px;min-height:36px}
+.chip i{width:12px;height:12px;border-radius:3px;background:var(--c,var(--ink))}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.keynote{font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.keynote .dia{display:inline-block;width:10px;height:10px;transform:rotate(45deg);background:var(--ink);margin-right:6px}
+.keynote .gap{display:inline-block;width:22px;height:0;border-top:2px dashed var(--muted);margin-right:6px;vertical-align:middle}
+.keynote .pre{display:inline-block;width:22px;height:10px;background:repeating-linear-gradient(135deg,var(--muted) 0 3px,transparent 3px 6px);box-shadow:inset 0 0 0 1.5px var(--muted);margin-right:6px;vertical-align:middle}
+
+/* the map */
+.map{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:0 14px 14px}
+.axis-row,.row>summary{display:grid;grid-template-columns:minmax(0,1fr);gap:4px}
+.axis-row{position:sticky;top:0;background:var(--paper);z-index:3;padding-block:10px 6px;border-bottom:1px solid var(--line)}
+.track{position:relative;height:22px;display:block}
+.axis-row .track{height:34px}
+.band{position:absolute;top:0;bottom:0;background:var(--band);border-left:1px solid var(--line)}
+.band.alt{background:transparent}
+.band b{position:absolute;left:3px;top:2px;font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);white-space:nowrap;max-width:calc(100% - 4px);overflow:hidden}
+.band.narrow b{display:none}
+.tick{position:absolute;bottom:0;font-family:var(--mono);font-size:10px;color:var(--muted);transform:translateX(-50%)}
+.now{position:absolute;top:0;bottom:0;width:0;border-left:2px solid var(--accent)}
+.area-h{font-family:var(--display);font-stretch:70%;font-weight:800;font-size:22px;text-transform:uppercase;color:var(--accent);padding-block:20px 4px}
+.row{border-top:1px solid var(--line)}
+.row>summary{cursor:pointer;list-style:none;padding-block:8px}
+.row>summary::-webkit-details-marker{display:none}
+.row .nm{font-family:var(--ui);font-size:15px;font-weight:600;display:flex;justify-content:space-between;gap:8px;line-height:1.3}
+.row .nm::after{content:"+";font-family:var(--mono);color:var(--muted)}
+.row[open] .nm::after{content:"−"}
+.seg{position:absolute;top:4px;height:14px;background:var(--c);border-radius:2px}
+.seg.pre{background:repeating-linear-gradient(135deg,var(--c) 0 3px,transparent 3px 6px);box-shadow:inset 0 0 0 1.5px var(--c)}
+.gapline{position:absolute;top:10px;height:0;border-top:2px dashed var(--muted)}
+.mk{position:absolute;top:5px;width:12px;height:12px;margin-left:-6px;transform:rotate(45deg);background:var(--c);box-shadow:0 0 0 2px var(--paper)}
+.dim .seg:not(.on),.dim .mk:not(.on){opacity:.15}
+.row .more{padding:2px 0 14px;display:grid;gap:10px}
+.row .more ol{margin:0;padding-left:0;list-style:none;display:grid;gap:6px}
+.row .more li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;font-size:15.5px}
+.row .more li .y{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--muted);min-width:5.6em}
+.row .more li i{display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--c);margin-right:6px}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:2px 14px}
+.src a{color:var(--muted)}
+.src a:hover{color:var(--accent)}
+@media (min-width:720px){
+  .axis-row,.row>summary{grid-template-columns:210px minmax(0,1fr);gap:14px;align-items:center}
+  .row .more{padding-left:224px}
+}
+@media (max-width:719px){.band.mid b{display:none}}
+
+/* governments */
+.govs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.gov{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:4px;padding:14px 16px;display:grid;gap:8px;align-content:start}
+.gov .hd{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.gov h3{font-family:var(--display);font-stretch:70%;font-weight:800;font-size:26px;text-transform:uppercase}
+.gov .party{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:1px 6px;border-radius:2px;color:var(--muted)}
+.gov ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:15.5px}
+.gov .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* how a program is born */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:16px 18px;display:grid;gap:8px;align-content:start}
+.card .n{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:44px;color:var(--accent);line-height:.9}
+.card p{font-size:16px}
+
+/* myths */
+.ev{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:2px;font-weight:500;line-height:1.4;white-space:nowrap}
+.ev.ok{background:var(--ok-soft);color:var(--ok);border:1px solid var(--ok)}
+.ev.no{background:var(--no-soft);color:var(--no);border:1px solid var(--no)}
+.ev.part{background:var(--part-soft);color:var(--part);border:1px solid var(--part)}
+.myths{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:12px}
+.myth{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:16px 18px;display:grid;gap:10px;align-content:start}
+.myth .side{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.myth .claim{font-family:var(--ui);font-weight:700;font-size:19px;line-height:1.25}
+.myth p{font-size:16px}
+
+/* verdict */
+.verdict{background:var(--ink);color:var(--paper);border-radius:4px;padding:22px 20px;display:grid;gap:12px}
+.verdict h2{color:var(--paper)}
+.verdict p{max-width:64ch}
+.verdict ul{margin:0;padding-left:20px;display:grid;gap:6px}
+footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;gap:8px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head><body>
+
+
+<style>/* barra comum das Rotas */.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><nav class="rotas-bar" aria-label="Rotas"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/">Rotas</a><a href="https://fcarvalhodev.github.io/rota-washington/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/">Fé</a><a href="https://fcarvalhodev.github.io/rota-esplanada/" aria-current="page">Esplanada</a></div></nav>
+<header class="wrap">
+  <div class="kicker">Rota Esplanada · Programas e benefícios federais, 1985–2026</div>
+  <h1>Esplanada</h1>
+  <p class="lede">Bolsa Família, SUS, aposentadoria rural, FIES, Pix, Auxílio Emergencial. Cada lado diz que fez. Aqui estão os principais programas e benefícios federais desde a volta da democracia: quem criou, quem ampliou e quem só trocou o nome.</p>
+</header>
+
+<main class="wrap">
+
+<section aria-labelledby="h-mapa">
+  <h2 id="h-mapa">O mapa dos programas</h2>
+  <p class="sub">Cada linha é um programa. A barra começa quando ele nasceu e muda de cor quando outro governo o recriou ou trocou o nome. Toque numa linha para ver a história e as fontes.</p>
+  <div class="key" role="group" aria-label="Destacar um governo">
+    <button class="chip" type="button" data-f="all" aria-pressed="true">Todos</button>
+    <button class="chip" type="button" data-f="lula" aria-pressed="false" style="--c:var(--c-lula)"><i aria-hidden="true"></i>Lula</button>
+    <button class="chip" type="button" data-f="dilma" aria-pressed="false" style="--c:var(--c-dilma)"><i aria-hidden="true"></i>Dilma</button>
+    <button class="chip" type="button" data-f="outros" aria-pressed="false" style="--c:var(--c-outros)"><i aria-hidden="true"></i>Outros governos</button>
+    <button class="chip" type="button" data-f="cf" aria-pressed="false" style="--c:var(--c-cf)"><i aria-hidden="true"></i>Constituição e Congresso</button>
+  </div>
+  <div class="keynote"><span><span class="dia" aria-hidden="true"></span>mudança importante</span><span><span class="gap" aria-hidden="true"></span>parado ou sem a regra</span><span><span class="pre" aria-hidden="true"></span>programa anterior que deu origem</span></div>
+  <div class="map" id="map"></div>
+</section>
+
+<section aria-labelledby="h-gov">
+  <h2 id="h-gov">Governo por governo</h2>
+  <p class="sub">O que cada governo criou e o que mudou nos programas que já existiam, segundo o mapa acima.</p>
+  <div class="govs" id="govs"></div>
+</section>
+
+<section aria-labelledby="h-nasce">
+  <h2 id="h-nasce">Como um programa nasce</h2>
+  <div class="cards">
+    <div class="card"><span class="n">1</span><h3>Presidente propõe, Congresso aprova</h3><p>Muitos programas viram lei. O governo manda o projeto ou a medida provisória, deputados e senadores votam e podem mudar o texto, e o presidente sanciona. O Auxílio Emergencial saiu do Congresso com o triplo do valor proposto.</p></div>
+    <div class="card"><span class="n">2</span><h3>Um programa puxa o outro</h3><p>O Bolsa Família juntou programas do FHC. O Fundeb substituiu o Fundef. O Luz para Todos ampliou o Luz no Campo. Criar e ampliar são coisas diferentes, e as duas contam.</p></div>
+    <div class="card"><span class="n">3</span><h3>Trocar o nome não é criar</h3><p>Bolsonaro trocou Bolsa Família por Auxílio Brasil e Minha Casa Minha Vida por Casa Verde e Amarela. Lula voltou com os nomes antigos em 2023. Nos dois sentidos, o programa continuou existindo com outro rótulo.</p></div>
+    <div class="card"><span class="n">4</span><h3>Parte vem da Constituição</h3><p>SUS, BPC e aposentadoria rural de um salário mínimo estão na Constituição de 1988, escrita por uma Assembleia eleita. Nenhum governo pode reivindicar sozinho. Os governos depois regulamentaram, pagaram e ampliaram.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-mitos">
+  <h2 id="h-mitos">O que circula × o que consta</h2>
+  <p class="sub">Frases que aparecem dos dois lados, checadas com o mesmo critério.</p>
+  <div class="myths" id="myths"></div>
+</section>
+
+<section aria-labelledby="h-ver">
+  <div class="verdict">
+    <h2 id="h-ver">Veredito</h2>
+    <p><b>Nenhum governo fez sozinho a rede de programas que existe hoje.</b> Ela foi montada em camadas, e cada camada tem dono.</p>
+    <ul>
+      <li><b>Constituição de 1988:</b> SUS, BPC e aposentadoria rural de um salário mínimo.</li>
+      <li><b>FHC:</b> Fundef, FIES, Pronaf, genéricos e os primeiros programas de renda, como o Bolsa Escola.</li>
+      <li><b>Lula:</b> Bolsa Família, ProUni, Minha Casa Minha Vida, Farmácia Popular, SAMU, Luz para Todos, MEI e Fundeb. No terceiro mandato, Pé-de-Meia, Desenrola, Gás do Povo e a isenção do IR até R$ 5 mil.</li>
+      <li><b>Dilma:</b> Mais Médicos, Pronatec, cotas nas federais e a lei de valorização do salário mínimo.</li>
+      <li><b>Bolsonaro:</b> Auxílio Emergencial (com o valor definido pelo Congresso), o novo Auxílio Gás e o Pix no ar. Também trocou o nome de programas do PT e não deu aumento real ao salário mínimo.</li>
+    </ul>
+    <p>Quem criou importa. Quem manteve, ampliou ou cortou também.</p>
+  </div>
+</section>
+
+<footer>
+  <p>A lista reúne os programas e benefícios federais mais citados no debate. Não é a lista completa de tudo o que cada governo fez. Cada item traz o link da lei, do documento oficial ou da reportagem de onde saiu.</p>
+  <p>Atualizado em 9 de outubro de 2026.</p>
+</footer>
+</main>
+
+<script>
+(function(){
+const SRC={
+  cf88:["Constituição","https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"],
+  segdes:["Decreto-Lei 2.284/1986","https://www.planalto.gov.br/ccivil_03/decreto-lei/del2284.htm"],
+  l8213:["Lei 8.213/1991","https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"],
+  bpc:["Câmara: estudo sobre o BPC","https://www2.camara.leg.br/orcamento-da-uniao/estudos/2019/et39_2019-beneficio-de-prestacao-continuada-bpc"],
+  l8287:["Lei 8.287/1991","https://planalto.gov.br/CCIVIL_03/LEIS/L8287.htm"],
+  l10779:["Lei 10.779/2003","https://www2.camara.leg.br/legin/fed/lei/2003/lei-10779-25-novembro-2003-470909-publicacaooriginal-1-pl.html"],
+  wikiBF:["Wikipedia: Bolsa Família","https://en.wikipedia.org/wiki/Bolsa_Fam%C3%ADlia"],
+  l10836:["Lei 10.836/2004","https://www2.camara.leg.br/legin/fed/lei/2004/lei-10836-9-janeiro-2004-490604-norma-pl.html"],
+  bf2023:["Agência Câmara","https://www.camara.leg.br/noticias/973711-SANCIONADA-LEI-QUE-RECRIA-O-PROGRAMA-BOLSA-FAMILIA"],
+  l14237:["Lei 14.237/2021","https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14237.htm"],
+  gasPovo:["Congresso em Foco","https://www.congressoemfoco.com.br/noticia/116449/com-sancao-de-lula-programa-gas-do-povo-e-convertido-em-lei"],
+  auxEmerg:["Congresso em Foco","https://congressoemfoco.com.br/saude/senado-aprova-auxilio-emergencial-de-r-600-para-trabalhadores-informais"],
+  dieese:["DIEESE","https://www.dieese.org.br/livro/2010/SMinstrumentoCombateDesigualdade/17.html"],
+  l12382:["Lei 12.382/2011","https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12382.htm"],
+  smBolso:["Diário do Nordeste","https://diariodonordeste.verdesmares.com.br/negocios/bolsonaro-confirma-salario-minimo-de-r-1212-para-2022-sera-o-3-ano-sem-ganho-real-1.3176122"],
+  l14663:["Lei 14.663/2023","https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm"],
+  ir5mil:["CNN Brasil","https://www.cnnbrasil.com.br/politica/lula-sanciona-isencao-do-ir-para-quem-ganha-ate-r-5-mil/"],
+  sus:["Lei 8.080/1990","https://www.planalto.gov.br/ccivil_03/leis/l8080.htm"],
+  genericos:["Lei 9.787/1999","https://www.planalto.gov.br/ccivil_03/leis/l9787.htm"],
+  samu:["Agência Senado","https://www12.senado.leg.br/noticias/materias/2024/05/29/congresso-celebrara-20-anos-do-samu-em-sessao-solene"],
+  farmacia:["Lei 10.858/2004","https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.858.htm"],
+  sorridente:["Agência Gov","https://agenciagov.ebc.com.br/noticias/202403/brasil-sorridente-pais-celebra-20-anos-da-politica-nacional-de-saude-bucal"],
+  mp621:["MP 621/2013","https://planalto.gov.br/ccivil_03/_Ato2011-2014/2013/Mpv/mpv621.htm"],
+  l13958:["Lei 13.958/2019","https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13958.htm"],
+  ec14:["Emenda 14/1996","https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc14.htm"],
+  l11494:["Lei 11.494/2007","https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11494.htm"],
+  ec108:["Emenda 108/2020","https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc108.htm"],
+  fies:["Poder360","https://www.poder360.com.br/educacao/fies-foi-criado-no-governo-de-fhc-nao-na-gestao-lula/"],
+  prouni:["MP 213/2004","https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Mpv/213impressao.htm"],
+  cotas:["Lei 12.711/2012","https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12711.htm"],
+  pronatec:["Lei 12.513/2011","https://www.senaipr.org.br/transparencia/estrutura-competencias-e-legislacao/uploadAddress/Lei-n-12513-2011[89871].pdf"],
+  pdm:["Migalhas","https://www.migalhas.com.br/quentes/400456/pe-de-meia-lei-cria-poupanca-para-estudantes-do-ensino-medio"],
+  luzCampo:["Agência Brasil (2002)","https://memoria.ebc.com.br/agenciabrasil//noticia/2002-07-05/rural-electrification-program-now-reaches-over-400000"],
+  iea:["IEA","https://www.iea.org/policies/4659-luz-para-todos-light-for-all-electrification-programme"],
+  mcmv:["Lei 11.977/2009","https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l11977.htm"],
+  cva:["Agência Senado","https://www12.senado.leg.br/noticias/materias/2021/01/13/programa-casa-verde-e-amarela-e-sancionado-com-veto-a-unificacao-de-tributos"],
+  nsc:["NSC Total","https://www.nsctotal.com.br/?p=2346739"],
+  bnb:["Revista BNB","https://www.bnb.gov.br/revista/ren/article/download/523/411/1096"],
+  reurb:["Lei 13.465/2017","https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13465.htm"],
+  pronaf:["Decreto 1.946/1996","https://www2.camara.leg.br/legin/fed/decret/1996/decreto-1946-28-junho-1996-435815-publicacaooriginal-1-pe.html"],
+  paa:["Ipea","https://repositorio.ipea.gov.br/bitstream/11058/10296/1/td_2606.pdf"],
+  mei:["Lei Complementar 128/2008","https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp128.htm"],
+  desenrola:["Lei 14.690/2023","https://legis.senado.leg.br/norma/37685971"],
+  pixNsc:["NSC Total / Comprova","https://www.nsctotal.com.br/?p=2437418"],
+  pixTemer:["Diário do Grande ABC","https://www.dgabc.com.br/Noticia/4246612/bases-do-pix-foram-definidas-pelo-bc-em-2018-no-fim-do-governo-temer"],
+  eca:["Lei 8.069/1990","https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"],
+  idoso:["Lei 10.741/2003","https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"],
+  penha:["PT","https://pt.org.br/sancionada-por-lula-lei-maria-da-penha-completa-10-anos/"],
+  racial:["LegisWeb","https://www.legisweb.com.br/noticia/?id=621"],
+  lbi:["Correio da Manhã","https://www.correiodamanha.com.br/nacional/2025/07/208286-estatuto-da-pessoa-com-deficiencia-faz-10-anos.html"]
+};
+// governments: key, name, start, end, party, colour group
+const GOV=[
+ ["sarney","Sarney",1985.2,1990.2,"PMDB","outros"],
+ ["collor","Collor",1990.2,1992.75,"PRN","outros"],
+ ["itamar","Itamar",1992.75,1995,"PMDB","outros"],
+ ["fhc","FHC",1995,2003,"PSDB","outros"],
+ ["lula","Lula",2003,2011,"PT","lula"],
+ ["dilma","Dilma",2011,2016.4,"PT","dilma"],
+ ["temer","Temer",2016.4,2019,"MDB","outros"],
+ ["bolsonaro","Bolsonaro",2019,2023,"PSL / PL","outros"],
+ ["lula3","Lula",2023,2026.8,"PT","lula"]
+];
+const WHO={cf:"Constituinte",cong:"Congresso",bc:"Banco Central"};
+GOV.forEach(g=>WHO[g[0]]=g[1]);
+WHO.lula3="Lula (3º mandato)";
+const GROUP={cf:"cf",cong:"cf",bc:"outros"};GOV.forEach(g=>GROUP[g[0]]=g[5]);
+const COL={lula:"var(--c-lula)",dilma:"var(--c-dilma)",outros:"var(--c-outros)",cf:"var(--c-cf)"};
+const X0=1985,X1=2027,NOW=2026.8;
+const pos=y=>((y-X0)/(X1-X0)*100).toFixed(2)+'%';
+const wid=(a,b)=>(((b-a)/(X1-X0))*100).toFixed(2)+'%';
+
+/* program rows.
+   s = segments [start, end|null(=today), who, text, pre?]  (pre = predecessor program, drawn hatched)
+   g = gaps [start, end, text]
+   m = markers [year, who, text] */
+const A=[
+ ["Renda e assistência",[
+  {n:"Seguro-desemprego",s:[[1986,null,"sarney","Criado no Plano Cruzado, por decreto-lei."]],src:["segdes"]},
+  {n:"Aposentadoria rural de um salário mínimo",s:[[1991.55,null,"collor","A Lei 8.213 regulamenta o que a Constituição garantiu."]],m:[[1988.8,"cf","Constituição prevê o benefício."]],src:["cf88","l8213"]},
+  {n:"BPC (idosos e pessoas com deficiência pobres)",s:[[1996,null,"fhc","Pagamentos começam em janeiro de 1996."]],m:[[1988.8,"cf","Constituição prevê o benefício."],[1993.9,"itamar","LOAS define as regras."]],src:["cf88","bpc"]},
+  {n:"Seguro-defeso (pescadores)",s:[[1991.95,null,"collor","Renda durante a proibição da pesca. Lei 8.287."]],m:[[2003.9,"lula","Nova lei reescreve as regras."]],src:["l8287","l10779"]},
+  {n:"Bolsa Família",s:[[2001,2003.8,"fhc","Bolsa Escola, Bolsa Alimentação e Auxílio Gás.",true],[2003.8,2021.85,"lula","Bolsa Família junta os programas anteriores num só."],[2021.85,2023.2,"bolsonaro","Vira Auxílio Brasil, com valor maior. Chega a R$ 600 em agosto de 2022."],[2023.2,null,"lula3","Volta o nome Bolsa Família, por lei, com mínimo de R$ 600 por família."]],src:["wikiBF","l10836","bf2023"]},
+  {n:"Auxílio Gás",s:[[2002,2003.8,"fhc","Auxílio Gás original, depois absorvido pelo Bolsa Família.",true],[2021.9,null,"bolsonaro","Novo Auxílio Gás dos Brasileiros, Lei 14.237."]],g:[[2003.8,2021.9,"Sem programa próprio de gás."]],m:[[2025.7,"lula3","Gás do Povo: botijão gratuito para famílias de baixa renda."]],src:["l14237","gasPovo"]},
+  {n:"Auxílio Emergencial",s:[[2020.3,2021.9,"bolsonaro","Ajuda na pandemia. O governo propôs R$ 200; o Congresso aprovou R$ 600."]],m:[[2020.25,"cong","Congresso triplica o valor proposto."]],src:["auxEmerg"]},
+  {n:"Aumento real do salário mínimo",s:[[2007,2011.1,"lula","Regra negociada com as centrais: inflação mais crescimento do PIB."],[2011.1,2020,"dilma","A regra vira lei (12.382) e é renovada até 2019."],[2023.4,null,"lula3","A regra volta por lei (14.663)."]],g:[[2020,2023.4,"Bolsonaro reajusta só pela inflação, sem ganho real."]],src:["dieese","l12382","smBolso","l14663"]},
+  {n:"Isenção do IR até R$ 5 mil",s:[[2026,null,"lula3","Vale desde janeiro de 2026."]],m:[[2025.9,"lula3","Lei sancionada em novembro de 2025, depois de aprovada pelo Congresso."]],src:["ir5mil"]}
+ ]],
+ ["Saúde",[
+  {n:"SUS",s:[[1988.8,null,"cf","Criado pela Constituição de 1988."]],m:[[1990.7,"collor","Lei 8.080 põe o SUS para funcionar."]],src:["cf88","sus"]},
+  {n:"Remédios genéricos",s:[[1999.1,null,"fhc","Lei 9.787, com José Serra no Ministério da Saúde."]],src:["genericos"]},
+  {n:"SAMU 192",s:[[2003.6,null,"lula","Atendimento móvel de urgência."]],src:["samu"]},
+  {n:"Farmácia Popular",s:[[2004.3,null,"lula","Remédios baratos ou gratuitos. Lei 10.858."]],src:["farmacia"]},
+  {n:"Brasil Sorridente",s:[[2004.2,null,"lula","Dentista no SUS."]],src:["sorridente"]},
+  {n:"Mais Médicos",s:[[2013.5,null,"dilma","Médicos para cidades sem atendimento. MP 621."]],m:[[2019.9,"bolsonaro","Lei cria o Médicos pelo Brasil para substituí-lo."],[2023.2,"lula3","Lula relança o Mais Médicos."]],src:["mp621","l13958"]}
+ ]],
+ ["Educação",[
+  {n:"Fundef → Fundeb",s:[[1996.9,2007,"fhc","Fundef: dinheiro garantido para o ensino fundamental."],[2007,null,"lula","Fundeb inclui creche, pré-escola e ensino médio."]],m:[[2020.65,"cong","Congresso torna o Fundeb permanente (Emenda 108)."]],src:["ec14","l11494","ec108"]},
+  {n:"FIES",s:[[1999.4,null,"fhc","Financiamento estudantil."]],m:[[2015,"dilma","Auge: 1,9 milhão de contratos, contra 182 mil em 2009."]],src:["fies"]},
+  {n:"ProUni",s:[[2004.75,null,"lula","Bolsas em faculdades privadas em troca de isenção de impostos."]],src:["prouni"]},
+  {n:"Pronatec",s:[[2011.8,null,"dilma","Cursos técnicos e de qualificação."]],src:["pronatec"]},
+  {n:"Cotas nas universidades federais",s:[[2012.65,null,"dilma","Lei 12.711: metade das vagas para quem estudou em escola pública, com recorte de renda e raça."]],src:["cotas"]},
+  {n:"Pé-de-Meia",s:[[2024.1,null,"lula3","Poupança para manter estudantes no ensino médio."]],src:["pdm"]}
+ ]],
+ ["Moradia, luz e água",[
+  {n:"Luz para Todos",s:[[1999.9,2003.85,"fhc","Luz no Campo, programa nacional de eletrificação rural.",true],[2003.85,null,"lula","Luz para Todos amplia e leva energia a milhões no campo."]],src:["luzCampo","iea"]},
+  {n:"Minha Casa Minha Vida",s:[[2009.25,2021.05,"lula","Moradia popular. Lei 11.977."],[2021.05,2023.15,"bolsonaro","Vira Casa Verde e Amarela."],[2023.15,null,"lula3","Volta o nome Minha Casa Minha Vida."]],src:["mcmv","cva"]},
+  {n:"Cisternas no semiárido",s:[[2003,null,"lula","Programa federal de cisternas, a partir de uma iniciativa da sociedade civil."]],m:[[2011.5,"dilma","Água para Todos amplia a meta."]],src:["nsc","bnb"]},
+  {n:"Regularização fundiária urbana (Reurb)",s:[[2017.5,null,"temer","Lei 13.465."]],src:["reurb"]}
+ ]],
+ ["Trabalho, crédito e produção",[
+  {n:"Pronaf (agricultura familiar)",s:[[1996.5,null,"fhc","Crédito para a agricultura familiar."]],src:["pronaf"]},
+  {n:"PAA (compra da agricultura familiar)",s:[[2003.5,null,"lula","O governo compra comida de pequenos produtores para doar."]],src:["paa"]},
+  {n:"MEI (microempreendedor individual)",s:[[2008.95,null,"lula","Lei Complementar 128: CNPJ simples para quem trabalha por conta própria."]],src:["mei"]},
+  {n:"Pix",s:[[2020.85,null,"bc","Lançado pelo Banco Central em novembro de 2020, no governo Bolsonaro."]],m:[[2018.4,"temer","Banco Central define as bases do sistema."]],src:["pixTemer","pixNsc"]},
+  {n:"Desenrola Brasil",s:[[2023.5,null,"lula3","Renegociação de dívidas."]],src:["desenrola"]}
+ ]],
+ ["Direitos",[
+  {n:"Estatuto da Criança e do Adolescente",s:[[1990.55,null,"collor","Lei 8.069."]],src:["eca"]},
+  {n:"Estatuto do Idoso",s:[[2003.75,null,"lula","Lei 10.741."]],src:["idoso"]},
+  {n:"Lei Maria da Penha",s:[[2006.6,null,"lula","Contra a violência doméstica."]],src:["penha"]},
+  {n:"Estatuto da Igualdade Racial",s:[[2010.55,null,"lula","Lei 12.288."]],src:["racial"]},
+  {n:"Estatuto da Pessoa com Deficiência",s:[[2015.5,null,"dilma","Lei Brasileira de Inclusão."]],src:["lbi"]}
+ ]]
+];
+const link=k=>{const s=SRC[k];return `<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`};
+const yr=y=>Math.floor(y);
+const bandCls=(g,i)=>{const w=g[3]-g[2];return `band${i%2?' alt':''}${w<3?' narrow':w<6?' mid':''}`};
+const bands=lab=>GOV.map((g,i)=>`<span class="${bandCls(g,i)}" style="left:${pos(g[2])};width:${wid(g[2],g[3])}">${lab?`<b>${g[1]}</b>`:''}</span>`).join('');
+let h=`<div class="axis-row" aria-hidden="true"><span class="mono">Programa</span><div class="track">${bands(true)}${[1990,2000,2010,2020].map(t=>`<span class="tick" style="left:${pos(t)}">${t}</span>`).join('')}<span class="now" style="left:${pos(NOW)}"></span></div></div>`;
+A.forEach(([area,rows])=>{
+  h+=`<div class="area-h">${area}</div>`;
+  rows.forEach(r=>{
+    const segs=(r.s||[]).map(s=>{const e=s[1]??NOW;return `<span class="seg${s[4]?' pre':''}" data-g="${GROUP[s[2]]}" style="--c:${COL[GROUP[s[2]]]};left:${pos(s[0])};width:${wid(s[0],e)}"></span>`}).join('');
+    const gaps=(r.g||[]).map(g=>`<span class="gapline" style="left:${pos(g[0])};width:${wid(g[0],g[1])}"></span>`).join('');
+    const mks=(r.m||[]).map(m=>`<span class="mk" data-g="${GROUP[m[1]]}" style="--c:${COL[GROUP[m[1]]]};left:${pos(m[0])}"></span>`).join('');
+    const ev=[...(r.s||[]).map(s=>[s[0],s[2],s[3],s[1]]),...(r.g||[]).map(g=>[g[0],null,g[2],g[1]]),...(r.m||[]).map(m=>[m[0],m[1],m[2]])].sort((a,b)=>a[0]-b[0]);
+    const hist=ev.map(e=>`<li><span class="y">${yr(e[0])}${e[3]!==undefined?(e[3]===null?'–hoje':'–'+yr(e[3])):''}</span><span>${e[1]?`<i style="--c:${COL[GROUP[e[1]]]}" aria-hidden="true"></i><b>${WHO[e[1]]}.</b> `:''}${e[2]}</span></li>`).join('');
+    h+=`<details class="row"><summary><span class="nm">${r.n}</span><span class="track" aria-hidden="true">${bands(false)}${gaps}${segs}${mks}</span></summary><div class="more"><ol>${hist}</ol><span class="src">${r.src.map(link).join('')}</span></div></details>`;
+  });
+});
+const map=document.getElementById('map');map.innerHTML=h;
+document.querySelectorAll('.key .chip').forEach(ch=>ch.addEventListener('click',()=>{
+  document.querySelectorAll('.key .chip').forEach(c=>c.setAttribute('aria-pressed',c===ch?'true':'false'));
+  const f=ch.dataset.f;map.classList.toggle('dim',f!=='all');
+  map.querySelectorAll('.seg,.mk').forEach(el=>el.classList.toggle('on',el.dataset.g===f));
+}));
+
+// governments, derived from the same data
+const byGov={};
+const add=(k,t,x)=>{(byGov[k]=byGov[k]||{c:[],m:[]})[t].push(x)};
+A.forEach(([,rows])=>rows.forEach(r=>{
+  (r.s||[]).forEach((s,i)=>i===0?add(s[2],'c',r.n+(s[4]?' (programa que deu origem)':'')):add(s[2],'m',`${r.n}: ${s[3]}`));
+  (r.m||[]).forEach(m=>add(m[1],'m',`${r.n}: ${m[2]}`));
+}));
+const name=g=>g[0]==="lula3"?"Lula, 3º mandato":g[0]==="lula"?"Lula, 1º e 2º mandatos":g[0]==="fhc"?"Fernando Henrique":g[1];
+const order=[["cf","Constituinte","1987–1988","cf",""],...GOV.map(g=>[g[0],name(g),`${Math.floor(g[2])}–${g[0]==="lula3"?"hoje":Math.floor(g[3])}`,g[5],g[4]]),["cong","Congresso","por conta própria","cf",""],["bc","Banco Central","órgão autônomo","outros",""]];
+document.getElementById('govs').innerHTML=order.filter(o=>byGov[o[0]]).map(o=>{const d=byGov[o[0]];return `<article class="gov" style="--c:${COL[o[3]]}"><div class="hd"><h3>${o[1]}</h3><span class="mono">${o[2]}</span>${o[4]?`<span class="party">${o[4]}</span>`:''}</div>${d.c.length?`<span class="lbl">Criou</span><ul>${d.c.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}${d.m.length?`<span class="lbl">Mudou</span><ul>${d.m.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}</article>`}).join('');
+
+// myths
+const M=[
+ ["Circula a favor do PT","“O SUS é do PT”","no","Não consta","O SUS foi criado pela Constituição de 1988 e regulamentado em 1990. Os governos seguintes, inclusive os do PT, financiaram e ampliaram.",["cf88","sus"]],
+ ["Circula a favor do PT","“A aposentadoria rural e o BPC são do Lula”","no","Não consta","Os dois estão na Constituição de 1988. A aposentadoria rural foi regulamentada em 1991 e o BPC começou a ser pago em 1996.",["cf88","l8213","bpc"]],
+ ["Circula a favor do PT","“O FIES é do Lula”","no","Não consta","Criado em 1999, no governo FHC. Cresceu muito com Lula e principalmente com Dilma.",["fies"]],
+ ["Circula a favor do PT","“Com o PT o salário mínimo subiu acima da inflação”","ok","Consta","A regra de inflação mais PIB foi negociada no governo Lula e virou lei no governo Dilma.",["dieese","l12382"]],
+ ["Circula contra o PT","“O Bolsa Família é do FHC, Lula só mudou o nome”","part","Em parte","Lula juntou programas criados pelo FHC, mas o Bolsa Família foi um programa novo, criado por lei em 2004, com regras e alcance diferentes.",["l10836","wikiBF"]],
+ ["Circula contra o PT","“No terceiro mandato Lula só relançou programas”","part","Em parte","Relançou Bolsa Família, Minha Casa Minha Vida e Mais Médicos, mas também criou Pé-de-Meia, Desenrola e Gás do Povo, e aprovou a isenção do IR até R$ 5 mil.",["bf2023","pdm","desenrola","gasPovo","ir5mil"]],
+ ["Circula a favor de Bolsonaro","“O Pix é do Bolsonaro”","part","Em parte","O Pix é do Banco Central. As bases foram definidas em 2018, no governo Temer, e o sistema entrou no ar em novembro de 2020, no governo Bolsonaro.",["pixNsc","pixTemer"]],
+ ["Circula a favor de Bolsonaro","“Os R$ 600 do Auxílio Emergencial foram ideia do Bolsonaro”","no","Não consta","O governo propôs R$ 200. O Congresso aprovou R$ 600 e Bolsonaro sancionou.",["auxEmerg"]],
+ ["Circula a favor de Bolsonaro","“Bolsonaro pagou R$ 600 no Bolsa Família”","part","Em parte","O Auxílio Brasil chegou a R$ 600 em agosto de 2022, ano de eleição. Em 2023 o valor virou mínimo fixo por lei, já com Lula.",["wikiBF","bf2023"]],
+ ["Circula contra Bolsonaro","“Bolsonaro acabou com o Bolsa Família e o Minha Casa Minha Vida”","part","Em parte","Trocou os nomes para Auxílio Brasil e Casa Verde e Amarela e mudou regras. Os programas de renda e moradia continuaram existindo.",["cva","wikiBF"]],
+ ["Circula contra Bolsonaro","“Bolsonaro não deu aumento real no salário mínimo”","ok","Consta","De 2020 a 2022 o mínimo foi corrigido só pela inflação, sem ganho real.",["smBolso"]]
+];
+document.getElementById('myths').innerHTML=M.map(m=>`<article class="myth"><span class="side">${m[0]}</span><span class="claim">${m[1]}</span><div><span class="ev ${m[2]}">${m[3]}</span></div><p>${m[4]}</p><span class="src">${m[5].map(link).join('')}</span></article>`).join('');
+})();
+</script>
+
+</body></html>
