@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rota Esplanada em ícones</title>
+<meta name="description" content="Programas federais de 1985 a 2026 em ícones: quem criou, quem ampliou e quem trocou o nome, governo por governo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fcarvalhodev.github.io/rotas/visual/visual.css">
+<style>
+:root{--accent:#a8431e;--hero:#8a3618}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent:#e98a5f;--hero:#8a3618}}
+:root[data-theme="dark"]{--accent:#e98a5f;--hero:#8a3618}
+.hero{background:var(--hero);border-color:var(--hero)}.hero .go a{color:var(--hero)}
+</style>
+</head><body>
+<style>/* barra comum das Rotas */.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rv-btn{display:inline-flex;align-items:center;gap:8px;justify-self:start;font-family:var(--ui,system-ui);font-weight:800;font-size:16px;letter-spacing:.02em;text-decoration:none;color:var(--paper,#fff);background:var(--accent);padding:10px 16px;border-radius:999px;box-shadow:0 2px 0 rgba(0,0,0,.15)}.rv-btn:hover{filter:brightness(1.08)}.rv-btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><style>/* padrão das Rotas: formato detalhado */body{font-size:17px;line-height:1.6}h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(60px,15vw,140px);line-height:.86;text-transform:uppercase;overflow-wrap:anywhere}h2{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;text-transform:uppercase}</style><nav class="rotas-bar" aria-label="Rotas"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/">Rotas</a><a href="https://fcarvalhodev.github.io/rota-washington/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/">Fé</a><a href="https://fcarvalhodev.github.io/rota-esplanada/" aria-current="page">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/">IBGE</a><a href="https://fcarvalhodev.github.io/rota-velho-chico/">Velho Chico</a><a href="https://fcarvalhodev.github.io/rota-do-tesouro/">Tesouro</a><a href="https://fcarvalhodev.github.io/rota-rouanet/">Rouanet</a><a href="https://fcarvalhodev.github.io/rota-dos-ventos/">Ventos</a></div></nav>
+
+
+<main class="rv" id="rv" aria-label="Rota Esplanada em ícones"></main>
+<script>
+window.RV_DATA={
+ kicker:"Rota Esplanada · em ícones",
+ title:"Quem fez os programas federais?",
+ answer:"<b>Nenhum governo fez sozinho.</b> A rede foi montada em camadas desde 1988: a Constituição, governos de todos os lados e o Congresso. Trocar o nome <b>não é criar</b>.",
+ heroIcons:["iso-doc","iso-familia","iso-casa","iso-hospital","iso-escola","iso-governo","iso-doc","iso-martelo","iso-idoso","iso-cedula-real"],
+ full:"index.html",
+ updated:"Dados até 10 de outubro de 2026 · atualizado em 12 de outubro de 2026 · ícones próprios e Tabler Icons (MIT)",
+ cards:[
+  {type:"hero",span:"s4",rows:2},
+  {type:"iso",span:"s8",label:"Governo por governo, 1985–2026",title:"Cada governo criou, ampliou ou trocou o nome de algo",size:24,
+   rows:[
+    {name:"Constituinte, 1988",value:"criou 3",parts:[{icon:"iso-doc",n:3,color:"var(--accent)"}]},
+    {name:"Sarney",value:"criou 1",parts:[{icon:"iso-doc",n:1,color:"var(--accent)"}]},
+    {name:"Collor",value:"criou 2 · regulamentou 2",parts:[{icon:"iso-doc",n:2,color:"var(--accent)"},{icon:"iso-doc",n:2,color:"var(--a)"}]},
+    {name:"Itamar",value:"regulamentou 1",parts:[{icon:"iso-doc",n:1,color:"var(--a)"}]},
+    {name:"FHC",value:"criou 7 · pôs para pagar 1",parts:[{icon:"iso-doc",n:7,color:"var(--accent)"},{icon:"iso-doc",n:1,color:"var(--a)"}]},
+    {name:"Lula, 1º e 2º mandatos",value:"criou 13 · ampliou 3",parts:[{icon:"iso-doc",n:13,color:"var(--accent)"},{icon:"iso-doc",n:3,color:"var(--a)"}]},
+    {name:"Dilma",value:"criou 4 · ampliou 3",parts:[{icon:"iso-doc",n:4,color:"var(--accent)"},{icon:"iso-doc",n:3,color:"var(--a)"}]},
+    {name:"Temer",value:"criou 1 · regras 1",parts:[{icon:"iso-doc",n:1,color:"var(--accent)"},{icon:"iso-doc",n:1,color:"var(--a)"}]},
+    {name:"Bolsonaro",value:"criou 2 · trocou 4 · parou 1",parts:[{icon:"iso-doc",n:2,color:"var(--accent)"},{icon:"iso-doc",n:4,color:"var(--c)"},{icon:"iso-doc",n:1,color:"var(--d)"}]},
+    {name:"Lula, 3º mandato",value:"criou 4 · relançou 6 · limitou 1",parts:[{icon:"iso-doc",n:4,color:"var(--accent)"},{icon:"iso-doc",n:6,color:"var(--c)"},{icon:"iso-doc",n:1,color:"var(--d)"}]},
+    {name:"Congresso, por conta própria",value:"ampliou 2",parts:[{icon:"iso-doc",n:2,color:"var(--a)"}]},
+    {name:"Banco Central (Pix)",value:"criou 1",parts:[{icon:"iso-doc",n:1,color:"var(--accent)"}]}],
+   key:[{icon:"iso-doc",text:"1 programa criado",color:"var(--accent)"},{icon:"iso-doc",text:"ampliado ou com regras novas",color:"var(--a)"},{icon:"iso-doc",text:"nome trocado, substituído ou relançado",color:"var(--c)"},{icon:"iso-doc",text:"parado ou limitado",color:"var(--d)"}],
+   text:"Contagem feita a partir dos 35 programas do mapa da versão completa, que não é tudo o que cada governo fez.",
+   src:[["Constituição","https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"],["Lei 10.836/2004","https://www2.camara.leg.br/legin/fed/lei/2004/lei-10836-9-janeiro-2004-490604-norma-pl.html"],["Agência Câmara","https://www.camara.leg.br/noticias/973711-SANCIONADA-LEI-QUE-RECRIA-O-PROGRAMA-BOLSA-FAMILIA"],["Agência Senado","https://www12.senado.leg.br/noticias/materias/2021/01/13/programa-casa-verde-e-amarela-e-sancionado-com-veto-a-unificacao-de-tributos"],["Lei 13.958/2019","https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13958.htm"],["MDS: histórico do PAA","https://www.gov.br/mds/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/programas-de-aquisicao-de-alimentos-cisternas-e-bolsa-familia-completam-20-anos-com-a-missao-de-tirar-o-pais-novamente-do-mapa-da-fome"],["Diário do Nordeste","https://diariodonordeste.verdesmares.com.br/negocios/bolsonaro-confirma-salario-minimo-de-r-1212-para-2022-sera-o-3-ano-sem-ganho-real-1.3176122"],["Lei 14.663/2023","https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm"],["Emenda 108/2020","https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc108.htm"],["Diário do Grande ABC: Pix","https://www.dgabc.com.br/Noticia/4246612/bases-do-pix-foram-definidas-pelo-bc-em-2018-no-fim-do-governo-temer"]]},
+  {type:"iso",span:"s8",label:"Quem decidiu os R$ 600",title:"O Congresso triplicou o Auxílio Emergencial",size:28,
+   rows:[
+    {head:"Auxílio Emergencial, 2020"},
+    {name:"Governo Bolsonaro propôs",icon:"iso-cedula-real",n:2,value:"R$ 200",color:"var(--d)"},
+    {name:"Congresso aprovou",icon:"iso-cedula-real",n:6,value:"R$ 600",color:"var(--accent)"},
+    {head:"Programa de renda"},
+    {name:"Auxílio Brasil, ago. 2022",icon:"iso-cedula-real",n:6,value:"R$ 600",color:"var(--accent)"},
+    {name:"Bolsa Família, 2023: mínimo por lei",icon:"iso-cedula-real",n:6,value:"R$ 600 por família",color:"var(--accent)"}],
+   key:{icon:"iso-cedula-real",text:"R$ 100",color:"var(--accent)"},
+   text:"Bolsonaro sancionou os R$ 600 de 2020. Em 2023, já com Lula, o valor virou mínimo fixo por lei.",
+   src:[["Congresso em Foco","https://congressoemfoco.com.br/saude/senado-aprova-auxilio-emergencial-de-r-600-para-trabalhadores-informais"],["Wikipedia: Bolsa Família","https://en.wikipedia.org/wiki/Bolsa_Fam%C3%ADlia"],["Agência Câmara","https://www.camara.leg.br/noticias/973711-SANCIONADA-LEI-QUE-RECRIA-O-PROGRAMA-BOLSA-FAMILIA"]]},
+  {type:"iso",span:"s6",label:"FIES, contratos",title:"Nasceu com FHC em 1999, chegou ao auge com Dilma",size:26,
+   rows:[
+    {name:"2009",icon:"iso-escola",n:1.82,value:"182 mil",color:"var(--a)"},
+    {name:"2015, o auge",icon:"iso-escola",n:19,value:"1,9 milhão",color:"var(--a)"}],
+   key:{icon:"iso-escola",text:"100 mil contratos",color:"var(--a)"},
+   text:"Criar e ampliar são coisas diferentes, e as duas contam.",
+   src:[["Poder360","https://www.poder360.com.br/educacao/fies-foi-criado-no-governo-de-fhc-nao-na-gestao-lula/"]]},
+  {type:"chips",span:"s6",label:"Salário mínimo acima da inflação",title:"A regra nasceu, parou e voltou",
+   items:[
+    ["2007","Lula: inflação mais PIB","Regra negociada com as centrais"],
+    ["2011","Dilma: a regra vira lei","Renovada até 2019"],
+    ["2020–22","Bolsonaro: só a inflação","Sem ganho real","var(--d)"],
+    ["2023","Lula: a regra volta","Lei 14.663"],
+    ["2025–30","Ganho real limitado","Entre 0,6% e 2,5%, Lei 15.077/2024","var(--d)"]],
+   src:[["DIEESE","https://www.dieese.org.br/livro/2010/SMinstrumentoCombateDesigualdade/17.html"],["Lei 12.382/2011","https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12382.htm"],["Diário do Nordeste","https://diariodonordeste.verdesmares.com.br/negocios/bolsonaro-confirma-salario-minimo-de-r-1212-para-2022-sera-o-3-ano-sem-ganho-real-1.3176122"],["Lei 14.663/2023","https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm"]]},
+  {type:"flow",span:"s6",label:"Renda: um programa puxa o outro",title:"Bolsa Família: juntou, trocou o nome e voltou",
+   steps:[
+    {icon:"iso-familia",name:"2001 · FHC",sub:"Bolsa Escola, Bolsa Alimentação e Auxílio Gás"},
+    {icon:"iso-familia",name:"2003 · Lula",sub:"Bolsa Família junta tudo num só",hot:true},
+    {icon:"iso-familia",name:"2021 · Bolsonaro",sub:"Vira Auxílio Brasil, com valor maior"},
+    {icon:"iso-familia",name:"2023 · Lula",sub:"Volta o nome, com mínimo de R$ 600"}],
+   src:[["Wikipedia: Bolsa Família","https://en.wikipedia.org/wiki/Bolsa_Fam%C3%ADlia"],["Lei 10.836/2004","https://www2.camara.leg.br/legin/fed/lei/2004/lei-10836-9-janeiro-2004-490604-norma-pl.html"],["Agência Câmara","https://www.camara.leg.br/noticias/973711-SANCIONADA-LEI-QUE-RECRIA-O-PROGRAMA-BOLSA-FAMILIA"]]},
+  {type:"flow",span:"s6",label:"Moradia",title:"Minha Casa Minha Vida: trocou o nome e voltou",
+   steps:[
+    {icon:"iso-casa",name:"2009 · Lula",sub:"Minha Casa Minha Vida, Lei 11.977",hot:true},
+    {icon:"iso-casa",name:"2021 · Bolsonaro",sub:"Casa Verde e Amarela, com outras regras"},
+    {icon:"iso-casa",name:"2023 · Lula",sub:"Relançado, com regras e público alterados"}],
+   text:"Não foram só trocas de rótulo: mudaram regras, benefícios e financiamento.",
+   src:[["Lei 11.977/2009","https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l11977.htm"],["Agência Senado","https://www12.senado.leg.br/noticias/materias/2021/01/13/programa-casa-verde-e-amarela-e-sancionado-com-veto-a-unificacao-de-tributos"]]},
+  {type:"scale",span:"s6",label:"Parte vem da Constituição",title:"SUS, BPC e aposentadoria rural não têm um dono só",tilt:0,
+   left:{icon:"iso-doc",title:"Constituição de 1988",text:"Escrita por uma Assembleia eleita. Criou o SUS e previu o BPC e a aposentadoria rural de um salário mínimo."},
+   right:{icon:"iso-governo",title:"Governos depois",text:"Collor regulamentou SUS e aposentadoria rural. Itamar fez a LOAS. FHC começou a pagar o BPC. Todos financiaram e ampliaram."},
+   src:[["Constituição","https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"],["Lei 8.080/1990","https://www.planalto.gov.br/ccivil_03/leis/l8080.htm"],["Lei 8.213/1991","https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"],["Câmara: estudo sobre o BPC","https://www2.camara.leg.br/orcamento-da-uniao/estudos/2019/et39_2019-beneficio-de-prestacao-continuada-bpc"]]},
+  {type:"flow",span:"s6",label:"Pix",title:"O Pix é do Banco Central",
+   steps:[
+    {icon:"iso-banco",name:"2018 · Temer",sub:"Banco Central define as bases"},
+    {icon:"iso-raio",name:"2020 · Bolsonaro",sub:"Pix entra no ar em novembro",hot:true}],
+   src:[["Diário do Grande ABC","https://www.dgabc.com.br/Noticia/4246612/bases-do-pix-foram-definidas-pelo-bc-em-2018-no-fim-do-governo-temer"],["NSC Total / Comprova","https://www.nsctotal.com.br/?p=2437418"]]},
+  {type:"verdicts",span:"s12",label:"É verdade?",
+   items:[["f","“O SUS é do PT”"],["f","“A aposentadoria rural e o BPC são do Lula”"],["f","“O FIES é do Lula”"],["v","“Com o PT o salário mínimo subiu acima da inflação”"],["m","“O Bolsa Família é do FHC, Lula só mudou o nome”"],["m","“No terceiro mandato Lula só relançou programas”"],["m","“O Pix é do Bolsonaro”"],["f","“Os R$ 600 do Auxílio Emergencial foram ideia do Bolsonaro”"],["m","“Bolsonaro pagou R$ 600 no Bolsa Família”"],["m","“Bolsonaro acabou com o Bolsa Família e o Minha Casa Minha Vida”"],["v","“Bolsonaro não deu aumento real no salário mínimo”"]]}
+ ]};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://fcarvalhodev.github.io/rotas/visual/icons.js"></script>
+<script src="https://fcarvalhodev.github.io/rotas/visual/visual.js"></script>
+</body></html>
