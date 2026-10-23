@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Programme DNA Test</title>
+<meta name="description" content="Every social programme has many fathers at election time. Run the DNA test: who started each one? Then judge the claims going around.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fcarvalhodev.github.io/rotas/jogos/jogo.css">
+<style>
+:root{--accent:#a8431e;--hero:#8a3618}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent:#e98a5f;--hero:#8a3618}}
+:root[data-theme="dark"]{--accent:#e98a5f;--hero:#8a3618}
+.hero{background:var(--hero);border-color:var(--hero)}.hero .go a{color:var(--hero)}
+</style>
+</head><body>
+<style>/* barra comum das Rotas */.rotas-bar .rb-lang{margin-left:auto;color:var(--accent);font-weight:600}.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rv-btn{display:inline-flex;align-items:center;gap:8px;justify-self:start;font-family:var(--ui,system-ui);font-weight:800;font-size:16px;letter-spacing:.02em;text-decoration:none;color:var(--paper,#fff);background:var(--accent);padding:10px 16px;border-radius:999px;box-shadow:0 2px 0 rgba(0,0,0,.15)}.rv-btn:hover{filter:brightness(1.08)}.rv-btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><style>/* padrão das Rotas: formato detalhado */body{font-size:17px;line-height:1.6}h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(60px,15vw,140px);line-height:.86;text-transform:uppercase;overflow-wrap:anywhere}h2{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;text-transform:uppercase}</style><nav class="rotas-bar" aria-label="Routes"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/en/">Routes</a><a href="https://fcarvalhodev.github.io/rota-washington/en/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/en/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/en/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/en/">Faith</a><a href="https://fcarvalhodev.github.io/rota-esplanada/en/" aria-current="page">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/en/">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/en/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/en/">IBGE</a><a href="https://fcarvalhodev.github.io/rota-velho-chico/en/">Velho Chico</a><a href="https://fcarvalhodev.github.io/rota-do-tesouro/en/">Treasury</a><a href="https://fcarvalhodev.github.io/rota-rouanet/en/">Rouanet</a><a href="https://fcarvalhodev.github.io/rota-dos-ventos/en/">Winds</a><a href="https://fcarvalhodev.github.io/rota-do-algoritmo/en/">Algorithm</a><a href="https://fcarvalhodev.github.io/rota-do-posto/en/">Pump</a><a href="https://fcarvalhodev.github.io/rota-das-queimadas/en/">Fires</a><a href="https://fcarvalhodev.github.io/rota-dos-games/en/">Games</a><a href="https://fcarvalhodev.github.io/rota-do-contracheque/en/">Paycheck</a><a href="https://fcarvalhodev.github.io/rota-palantir/en/">Palantir</a><a class="rb-lang" href="../jogo.html" hreflang="pt-BR" lang="pt-BR">PT</a></div></nav>
+<main class="jg" id="jg" aria-live="polite"><noscript>This game needs JavaScript. <a href="index.html">Read the route</a>.</noscript></main>
+<script>
+window.JG_DATA={
+ "kicker": "Rota Esplanada · game",
+ "title": "The Programme DNA Test",
+ "host": [
+  "🧬",
+  "Esplanada lab"
+ ],
+ "emo": "👶",
+ "intro": "Every social programme has many fathers at election time. Run the DNA test: who started each one? Then judge the claims going around.",
+ "rounds": [
+  {
+   "type": "escolha",
+   "title": "Paternity test",
+   "how": "pick who created each programme: a government, the 1988 Constituent Assembly or the Central Bank.",
+   "n": 6,
+   "items": [
+    {
+     "q": "Who created it: Seguro-desemprego?",
+     "o": [
+      "Temer",
+      "Sarney",
+      "Itamar",
+      "Bolsonaro"
+     ],
+     "a": 1,
+     "e": "Sarney: Created under the Cruzado Plan, by decree-law.",
+     "s": [
+      [
+       "Decree-Law 2.284/1986",
+       "https://www.planalto.gov.br/ccivil_03/decreto-lei/del2284.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Seguro-defeso (fishers)?",
+     "o": [
+      "Dilma",
+      "Sarney",
+      "Itamar",
+      "Collor"
+     ],
+     "a": 3,
+     "e": "Collor: Income during fishing bans. Law 8.287.",
+     "s": [
+      [
+       "Law 8.287/1991",
+       "https://planalto.gov.br/CCIVIL_03/LEIS/L8287.htm"
+      ],
+      [
+       "Law 10.779/2003",
+       "https://www2.camara.leg.br/legin/fed/lei/2003/lei-10779-25-novembro-2003-470909-publicacaooriginal-1-pl.html"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Real minimum wage increase?",
+     "o": [
+      "Itamar",
+      "Dilma",
+      "Lula",
+      "Collor"
+     ],
+     "a": 2,
+     "e": "Lula: Rule negotiated with the labor federations: inflation plus GDP growth. Dilma: The rule becomes law (12.382) and is renewed until 2019. Lula: The rule returns through Law 14.663/2023; Law 15.077/2024 limits the real gain to between 0.6% and 2.5% in 2025–2030.",
+     "s": [
+      [
+       "DIEESE",
+       "https://www.dieese.org.br/livro/2010/SMinstrumentoCombateDesigualdade/17.html"
+      ],
+      [
+       "Law 12.382/2011",
+       "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12382.htm"
+      ],
+      [
+       "Diário do Nordeste",
+       "https://diariodonordeste.verdesmares.com.br/negocios/bolsonaro-confirma-salario-minimo-de-r-1212-para-2022-sera-o-3-ano-sem-ganho-real-1.3176122"
+      ],
+      [
+       "Law 14.663/2023",
+       "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: SUS?",
+     "o": [
+      "Dilma",
+      "1988 Constituent Assembly",
+      "Bolsonaro",
+      "Temer"
+     ],
+     "a": 1,
+     "e": "1988 Constituent Assembly: Created by the 1988 Constitution.",
+     "s": [
+      [
+       "Constitution",
+       "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+      ],
+      [
+       "Law 8.080/1990",
+       "https://www.planalto.gov.br/ccivil_03/leis/l8080.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Generic drugs?",
+     "o": [
+      "Dilma",
+      "1988 Constituent Assembly",
+      "Itamar",
+      "FHC"
+     ],
+     "a": 3,
+     "e": "FHC: Law 9.787, with José Serra as Health Minister.",
+     "s": [
+      [
+       "Law 9.787/1999",
+       "https://www.planalto.gov.br/ccivil_03/leis/l9787.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: SAMU 192?",
+     "o": [
+      "Sarney",
+      "Lula",
+      "1988 Constituent Assembly",
+      "Temer"
+     ],
+     "a": 1,
+     "e": "Lula: Mobile emergency care.",
+     "s": [
+      [
+       "Agência Senado",
+       "https://www12.senado.leg.br/noticias/materias/2024/05/29/congresso-celebrara-20-anos-do-samu-em-sessao-solene"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Farmácia Popular?",
+     "o": [
+      "Lula",
+      "FHC",
+      "Itamar",
+      "Temer"
+     ],
+     "a": 0,
+     "e": "Lula: Cheap or free medicines. Law 10.858.",
+     "s": [
+      [
+       "Law 10.858/2004",
+       "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.858.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Brasil Sorridente?",
+     "o": [
+      "Lula",
+      "Sarney",
+      "Temer",
+      "Collor"
+     ],
+     "a": 0,
+     "e": "Lula: Dentists in SUS.",
+     "s": [
+      [
+       "Agência Gov",
+       "https://agenciagov.ebc.com.br/noticias/202403/brasil-sorridente-pais-celebra-20-anos-da-politica-nacional-de-saude-bucal"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Mais Médicos?",
+     "o": [
+      "Dilma",
+      "Temer",
+      "Itamar",
+      "Sarney"
+     ],
+     "a": 0,
+     "e": "Dilma: Doctors for towns without care. MP 621.",
+     "s": [
+      [
+       "MP 621/2013",
+       "https://planalto.gov.br/ccivil_03/_Ato2011-2014/2013/Mpv/mpv621.htm"
+      ],
+      [
+       "Law 13.958/2019",
+       "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13958.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Fundef → Fundeb?",
+     "o": [
+      "Lula",
+      "Bolsonaro",
+      "Dilma",
+      "FHC"
+     ],
+     "a": 3,
+     "e": "FHC: Fundef: guaranteed money for primary education. Lula: Fundeb adds daycare, preschool and secondary school.",
+     "s": [
+      [
+       "Amendment 14/1996",
+       "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc14.htm"
+      ],
+      [
+       "Law 11.494/2007",
+       "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11494.htm"
+      ],
+      [
+       "Amendment 108/2020",
+       "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc108.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: FIES?",
+     "o": [
+      "Lula",
+      "1988 Constituent Assembly",
+      "FHC",
+      "Sarney"
+     ],
+     "a": 2,
+     "e": "FHC: FIES created in 1999, with a predecessor in educational credit; expanded by later governments.",
+     "s": [
+      [
+       "Poder360",
+       "https://www.poder360.com.br/educacao/fies-foi-criado-no-governo-de-fhc-nao-na-gestao-lula/"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: ProUni?",
+     "o": [
+      "Lula",
+      "Temer",
+      "Itamar",
+      "FHC"
+     ],
+     "a": 0,
+     "e": "Lula: Scholarships at private colleges in exchange for tax exemptions.",
+     "s": [
+      [
+       "MP 213/2004",
+       "https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Mpv/213impressao.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Pronatec?",
+     "o": [
+      "Dilma",
+      "FHC",
+      "1988 Constituent Assembly",
+      "Temer"
+     ],
+     "a": 0,
+     "e": "Dilma: Technical and vocational courses.",
+     "s": [
+      [
+       "Law 12.513/2011",
+       "https://www.senaipr.org.br/transparencia/estrutura-competencias-e-legislacao/uploadAddress/Lei-n-12513-2011[89871].pdf"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Quotas at federal universities?",
+     "o": [
+      "1988 Constituent Assembly",
+      "Collor",
+      "Dilma",
+      "Temer"
+     ],
+     "a": 2,
+     "e": "Dilma: Law 12.711: half of the places for students from public schools, with income and race criteria.",
+     "s": [
+      [
+       "Law 12.711/2012",
+       "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12711.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Pé-de-Meia?",
+     "o": [
+      "Lula",
+      "Bolsonaro",
+      "Dilma",
+      "Temer"
+     ],
+     "a": 0,
+     "e": "Lula: Savings to keep students in secondary school.",
+     "s": [
+      [
+       "Migalhas",
+       "https://www.migalhas.com.br/quentes/400456/pe-de-meia-lei-cria-poupanca-para-estudantes-do-ensino-medio"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Minha Casa Minha Vida?",
+     "o": [
+      "Lula",
+      "Collor",
+      "Itamar",
+      "Temer"
+     ],
+     "a": 0,
+     "e": "Lula: Low-income housing. Law 11.977. Bolsonaro: Replaced by Casa Verde e Amarela, with changes in funding and rules. Lula: Relaunched as Minha Casa Minha Vida, with changes in rules and target public.",
+     "s": [
+      [
+       "Law 11.977/2009",
+       "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l11977.htm"
+      ],
+      [
+       "Agência Senado",
+       "https://www12.senado.leg.br/noticias/materias/2021/01/13/programa-casa-verde-e-amarela-e-sancionado-com-veto-a-unificacao-de-tributos"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Cisterns in the semi-arid region?",
+     "o": [
+      "Collor",
+      "Lula",
+      "FHC",
+      "Bolsonaro"
+     ],
+     "a": 1,
+     "e": "Lula: Federal cistern program, based on a civil society initiative.",
+     "s": [
+      [
+       "NSC Total",
+       "https://www.nsctotal.com.br/?p=2346739"
+      ],
+      [
+       "Revista BNB",
+       "https://www.bnb.gov.br/revista/ren/article/download/523/411/1096"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Urban land regularization (Reurb)?",
+     "o": [
+      "Dilma",
+      "Itamar",
+      "Bolsonaro",
+      "Temer"
+     ],
+     "a": 3,
+     "e": "Temer: Law 13.465.",
+     "s": [
+      [
+       "Law 13.465/2017",
+       "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13465.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Pronaf (family farming)?",
+     "o": [
+      "FHC",
+      "Collor",
+      "1988 Constituent Assembly",
+      "Dilma"
+     ],
+     "a": 0,
+     "e": "FHC: Credit for family farming.",
+     "s": [
+      [
+       "Decree 1.946/1996",
+       "https://www2.camara.leg.br/legin/fed/decret/1996/decreto-1946-28-junho-1996-435815-publicacaooriginal-1-pe.html"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: PAA (purchases from family farms)?",
+     "o": [
+      "Dilma",
+      "Sarney",
+      "Lula",
+      "Collor"
+     ],
+     "a": 2,
+     "e": "Lula: Public purchase of food from family farms. Bolsonaro: Replaced by Alimenta Brasil, Law 14.284/2021. Lula: PAA recreated in March 2023 and confirmed by Law 14.628/2023.",
+     "s": [
+      [
+       "Ipea",
+       "https://repositorio.ipea.gov.br/bitstream/11058/10296/1/td_2606.pdf"
+      ],
+      [
+       "MDS: replacement and recreation of the PAA",
+       "https://www.gov.br/mds/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/programas-de-aquisicao-de-alimentos-cisternas-e-bolsa-familia-completam-20-anos-com-a-missao-de-tirar-o-pais-novamente-do-mapa-da-fome"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: MEI (individual micro-entrepreneur)?",
+     "o": [
+      "1988 Constituent Assembly",
+      "Bolsonaro",
+      "FHC",
+      "Lula"
+     ],
+     "a": 3,
+     "e": "Lula: Complementary Law 128: a simple business registration for the self-employed.",
+     "s": [
+      [
+       "Complementary Law 128/2008",
+       "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp128.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Desenrola Brasil?",
+     "o": [
+      "Lula",
+      "Sarney",
+      "Itamar",
+      "Temer"
+     ],
+     "a": 0,
+     "e": "Lula: Original phase; ended on May 20, 2024. Lula: New Desenrola: initial 90-day drive starting May 4. Modalities and any extensions have their own deadlines.",
+     "s": [
+      [
+       "Law 14.690/2023",
+       "https://legis.senado.leg.br/norma/37685971"
+      ],
+      [
+       "Finance Ministry: end of the original phase",
+       "https://agenciagov.ebc.com.br/noticias/202406/criminosos-usam-nome-do-desenrola-brasil-encerrado-em-maio-para-aplicar-golpes"
+      ],
+      [
+       "FGTS: new program in 2026",
+       "https://www.fgts.gov.br/Paginas/saque-mp-1355-2026.aspx"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Child and Adolescent Statute?",
+     "o": [
+      "1988 Constituent Assembly",
+      "FHC",
+      "Collor",
+      "Dilma"
+     ],
+     "a": 2,
+     "e": "Collor: Law 8.069.",
+     "s": [
+      [
+       "Law 8.069/1990",
+       "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Elderly Statute?",
+     "o": [
+      "Dilma",
+      "1988 Constituent Assembly",
+      "Temer",
+      "Lula"
+     ],
+     "a": 3,
+     "e": "Lula: Law 10.741.",
+     "s": [
+      [
+       "Law 10.741/2003",
+       "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Maria da Penha Law?",
+     "o": [
+      "1988 Constituent Assembly",
+      "Temer",
+      "Lula",
+      "Itamar"
+     ],
+     "a": 2,
+     "e": "Lula: Against domestic violence.",
+     "s": [
+      [
+       "PT",
+       "https://pt.org.br/sancionada-por-lula-lei-maria-da-penha-completa-10-anos/"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Racial Equality Statute?",
+     "o": [
+      "1988 Constituent Assembly",
+      "FHC",
+      "Dilma",
+      "Lula"
+     ],
+     "a": 3,
+     "e": "Lula: Law 12.288.",
+     "s": [
+      [
+       "LegisWeb",
+       "https://www.legisweb.com.br/noticia/?id=621"
+      ]
+     ]
+    },
+    {
+     "q": "Who created it: Statute of Persons with Disabilities?",
+     "o": [
+      "FHC",
+      "Bolsonaro",
+      "Dilma",
+      "Collor"
+     ],
+     "a": 2,
+     "e": "Dilma: Brazilian Inclusion Law.",
+     "s": [
+      [
+       "Correio da Manhã",
+       "https://www.correiodamanha.com.br/nacional/2025/07/208286-estatuto-da-pessoa-com-deficiencia-faz-10-anos.html"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "boato",
+   "title": "Campaign claims",
+   "how": "read the claim going around and say whether it is True, Half true, False or No proof.",
+   "n": 4,
+   "items": [
+    {
+     "c": "SUS belongs to the PT",
+     "v": "f",
+     "e": "SUS was created by the 1988 Constitution and regulated in 1990. Later governments, including the PT's, funded and expanded it.",
+     "s": [
+      [
+       "Constitution",
+       "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+      ],
+      [
+       "Law 8.080/1990",
+       "https://www.planalto.gov.br/ccivil_03/leis/l8080.htm"
+      ]
+     ],
+     "who": "Circulates in favor of the PT"
+    },
+    {
+     "c": "The rural pension and the BPC are Lula's",
+     "v": "f",
+     "e": "Both are in the 1988 Constitution. The rural pension was regulated in 1991 and the BPC began to be paid in 1996.",
+     "s": [
+      [
+       "Constitution",
+       "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+      ],
+      [
+       "Law 8.213/1991",
+       "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+      ],
+      [
+       "Chamber: study on the BPC",
+       "https://www2.camara.leg.br/orcamento-da-uniao/estudos/2019/et39_2019-beneficio-de-prestacao-continuada-bpc"
+      ]
+     ],
+     "who": "Circulates in favor of the PT"
+    },
+    {
+     "c": "FIES is Lula's",
+     "v": "f",
+     "e": "Created in 1999, under FHC. It grew a lot under Lula and especially under Dilma.",
+     "s": [
+      [
+       "Poder360",
+       "https://www.poder360.com.br/educacao/fies-foi-criado-no-governo-de-fhc-nao-na-gestao-lula/"
+      ]
+     ],
+     "who": "Circulates in favor of the PT"
+    },
+    {
+     "c": "Under the PT the minimum wage rose above inflation",
+     "v": "v",
+     "e": "The inflation-plus-GDP rule was negotiated under Lula and became law under Dilma.",
+     "s": [
+      [
+       "DIEESE",
+       "https://www.dieese.org.br/livro/2010/SMinstrumentoCombateDesigualdade/17.html"
+      ],
+      [
+       "Law 12.382/2011",
+       "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12382.htm"
+      ]
+     ],
+     "who": "Circulates in favor of the PT"
+    },
+    {
+     "c": "Bolsa Família is FHC's, Lula only changed the name",
+     "v": "m",
+     "e": "Lula merged programs created by FHC, but Bolsa Família was a new program, created by law in 2004, with different rules and reach.",
+     "s": [
+      [
+       "Law 10.836/2004",
+       "https://www2.camara.leg.br/legin/fed/lei/2004/lei-10836-9-janeiro-2004-490604-norma-pl.html"
+      ],
+      [
+       "Wikipedia: Bolsa Família",
+       "https://en.wikipedia.org/wiki/Bolsa_Fam%C3%ADlia"
+      ]
+     ],
+     "who": "Circulates against the PT"
+    },
+    {
+     "c": "In his third term Lula only relaunched programs",
+     "v": "m",
+     "e": "He relaunched Bolsa Família, Minha Casa Minha Vida and Mais Médicos, but also created Pé-de-Meia, Desenrola and Gás do Povo, and passed the income tax exemption up to R$5,000.",
+     "s": [
+      [
+       "Agência Câmara",
+       "https://www.camara.leg.br/noticias/973711-SANCIONADA-LEI-QUE-RECRIA-O-PROGRAMA-BOLSA-FAMILIA"
+      ],
+      [
+       "Migalhas",
+       "https://www.migalhas.com.br/quentes/400456/pe-de-meia-lei-cria-poupanca-para-estudantes-do-ensino-medio"
+      ],
+      [
+       "Law 14.690/2023",
+       "https://legis.senado.leg.br/norma/37685971"
+      ],
+      [
+       "Congresso em Foco",
+       "https://www.congressoemfoco.com.br/noticia/116449/com-sancao-de-lula-programa-gas-do-povo-e-convertido-em-lei"
+      ],
+      [
+       "CNN Brasil",
+       "https://www.cnnbrasil.com.br/politica/lula-sanciona-isencao-do-ir-para-quem-ganha-ate-r-5-mil/"
+      ]
+     ],
+     "who": "Circulates against the PT"
+    },
+    {
+     "c": "Pix is Bolsonaro's",
+     "v": "m",
+     "e": "Pix belongs to the Central Bank. Its foundations were set in 2018, under Temer, and the system went live in November 2020, under Bolsonaro.",
+     "s": [
+      [
+       "NSC Total / Comprova",
+       "https://www.nsctotal.com.br/?p=2437418"
+      ],
+      [
+       "Diário do Grande ABC",
+       "https://www.dgabc.com.br/Noticia/4246612/bases-do-pix-foram-definidas-pelo-bc-em-2018-no-fim-do-governo-temer"
+      ]
+     ],
+     "who": "Circulates in favor of Bolsonaro"
+    },
+    {
+     "c": "The R$600 Emergency Aid was Bolsonaro's idea",
+     "v": "f",
+     "e": "The government proposed R$200. Congress approved R$600 and Bolsonaro signed it.",
+     "s": [
+      [
+       "Congresso em Foco",
+       "https://congressoemfoco.com.br/saude/senado-aprova-auxilio-emergencial-de-r-600-para-trabalhadores-informais"
+      ]
+     ],
+     "who": "Circulates in favor of Bolsonaro"
+    },
+    {
+     "c": "Bolsonaro paid R$600 in Bolsa Família",
+     "v": "m",
+     "e": "Auxílio Brasil reached R$600 in August 2022, an election year. In 2023 the amount became a fixed minimum by law, already under Lula.",
+     "s": [
+      [
+       "Wikipedia: Bolsa Família",
+       "https://en.wikipedia.org/wiki/Bolsa_Fam%C3%ADlia"
+      ],
+      [
+       "Agência Câmara",
+       "https://www.camara.leg.br/noticias/973711-SANCIONADA-LEI-QUE-RECRIA-O-PROGRAMA-BOLSA-FAMILIA"
+      ]
+     ],
+     "who": "Circulates in favor of Bolsonaro"
+    },
+    {
+     "c": "Bolsonaro ended Bolsa Família and Minha Casa Minha Vida",
+     "v": "m",
+     "e": "He changed the names to Auxílio Brasil and Casa Verde e Amarela and changed rules. The income and housing programs kept existing.",
+     "s": [
+      [
+       "Agência Senado",
+       "https://www12.senado.leg.br/noticias/materias/2021/01/13/programa-casa-verde-e-amarela-e-sancionado-com-veto-a-unificacao-de-tributos"
+      ],
+      [
+       "Wikipedia: Bolsa Família",
+       "https://en.wikipedia.org/wiki/Bolsa_Fam%C3%ADlia"
+      ]
+     ],
+     "who": "Circulates against Bolsonaro"
+    },
+    {
+     "c": "Bolsonaro gave no real increase to the minimum wage",
+     "v": "v",
+     "e": "From 2020 to 2022 the minimum wage was adjusted only for inflation, with no real gain.",
+     "s": [
+      [
+       "Diário do Nordeste",
+       "https://diariodonordeste.verdesmares.com.br/negocios/bolsonaro-confirma-salario-minimo-de-r-1212-para-2022-sera-o-3-ano-sem-ganho-real-1.3176122"
+      ]
+     ],
+     "who": "Circulates against Bolsonaro"
+    }
+   ]
+  }
+ ],
+ "ranks": [
+  [
+   0,
+   "Registered the child under the wrong name."
+  ],
+  [
+   40,
+   "Inconclusive test."
+  ],
+  [
+   65,
+   "Registry expert."
+  ],
+  [
+   90,
+   "99.9% certain: you know who the father is."
+  ]
+ ],
+ "quips": {
+  "ok": [
+   "Right! Go ahead and publish.",
+   "Spot on. The source thanks you.",
+   "Correct. The family group chat will have to swallow it.",
+   "Nice! Old-school fact-checker."
+  ],
+  "no": [
+   "Wrong. But at least you did not share it.",
+   "Close. Read the explanation before forwarding it.",
+   "Not this time. It happens to journalists too.",
+   "Oops. The group-chat aunt won this one."
+  ]
+ },
+ "full": "index.html",
+ "updated": "Rotas · Rota Esplanada"
+};
+</script>
+<script src="https://fcarvalhodev.github.io/rotas/jogos/jogo.js"></script>
+</body></html>

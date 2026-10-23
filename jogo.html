@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Teste de DNA dos Programas</title>
+<meta name="description" content="Todo programa social tem muitos pais na hora de pedir voto. Faça o teste de DNA: quem começou cada um? Depois, julgue as frases que circulam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fcarvalhodev.github.io/rotas/jogos/jogo.css">
+<style>
+:root{--accent:#a8431e;--hero:#8a3618}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent:#e98a5f;--hero:#8a3618}}
+:root[data-theme="dark"]{--accent:#e98a5f;--hero:#8a3618}
+.hero{background:var(--hero);border-color:var(--hero)}.hero .go a{color:var(--hero)}
+</style>
+</head><body>
+<style>/* barra comum das Rotas */.rotas-bar .rb-lang{margin-left:auto;color:var(--accent);font-weight:600}.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rv-btn{display:inline-flex;align-items:center;gap:8px;justify-self:start;font-family:var(--ui,system-ui);font-weight:800;font-size:16px;letter-spacing:.02em;text-decoration:none;color:var(--paper,#fff);background:var(--accent);padding:10px 16px;border-radius:999px;box-shadow:0 2px 0 rgba(0,0,0,.15)}.rv-btn:hover{filter:brightness(1.08)}.rv-btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><style>/* padrão das Rotas: formato detalhado */body{font-size:17px;line-height:1.6}h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(60px,15vw,140px);line-height:.86;text-transform:uppercase;overflow-wrap:anywhere}h2{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;text-transform:uppercase}</style><nav class="rotas-bar" aria-label="Rotas"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/">Rotas</a><a href="https://fcarvalhodev.github.io/rota-washington/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/">Fé</a><a href="https://fcarvalhodev.github.io/rota-esplanada/" aria-current="page">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/">IBGE</a><a href="https://fcarvalhodev.github.io/rota-velho-chico/">Velho Chico</a><a href="https://fcarvalhodev.github.io/rota-do-tesouro/">Tesouro</a><a href="https://fcarvalhodev.github.io/rota-rouanet/">Rouanet</a><a href="https://fcarvalhodev.github.io/rota-dos-ventos/">Ventos</a><a href="https://fcarvalhodev.github.io/rota-do-algoritmo/">Algoritmo</a><a href="https://fcarvalhodev.github.io/rota-do-posto/">Posto</a><a href="https://fcarvalhodev.github.io/rota-das-queimadas/">Queimadas</a><a href="https://fcarvalhodev.github.io/rota-dos-games/">Games</a><a href="https://fcarvalhodev.github.io/rota-do-contracheque/">Contracheque</a><a href="https://fcarvalhodev.github.io/rota-palantir/">Palantir</a><a class="rb-lang" href="en/jogo.html" hreflang="en" lang="en">EN</a></div></nav>
+<main class="jg" id="jg" aria-live="polite"><noscript>Este jogo precisa de JavaScript. <a href="index.html">Ler a rota</a>.</noscript></main>
+<script>
+window.JG_DATA={
+ "kicker": "Rota Esplanada · jogo",
+ "title": "Teste de DNA dos Programas",
+ "host": [
+  "🧬",
+  "Laboratório da Esplanada"
+ ],
+ "emo": "👶",
+ "intro": "Todo programa social tem muitos pais na hora de pedir voto. Faça o teste de DNA: quem começou cada um? Depois, julgue as frases que circulam.",
+ "rounds": [
+  {
+   "type": "escolha",
+   "title": "Teste de paternidade",
+   "how": "escolha quem criou cada programa: um governo, a Constituinte de 1988 ou o Banco Central.",
+   "n": 6,
+   "items": [
+    {
+     "q": "Quem criou: Seguro-desemprego?",
+     "o": [
+      "Temer",
+      "Sarney",
+      "Itamar",
+      "Bolsonaro"
+     ],
+     "a": 1,
+     "e": "Sarney: Criado no Plano Cruzado, por decreto-lei.",
+     "s": [
+      [
+       "Decreto-Lei 2.284/1986",
+       "https://www.planalto.gov.br/ccivil_03/decreto-lei/del2284.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Seguro-defeso (pescadores)?",
+     "o": [
+      "Dilma",
+      "Sarney",
+      "Itamar",
+      "Collor"
+     ],
+     "a": 3,
+     "e": "Collor: Renda durante a proibição da pesca. Lei 8.287.",
+     "s": [
+      [
+       "Lei 8.287/1991",
+       "https://planalto.gov.br/CCIVIL_03/LEIS/L8287.htm"
+      ],
+      [
+       "Lei 10.779/2003",
+       "https://www2.camara.leg.br/legin/fed/lei/2003/lei-10779-25-novembro-2003-470909-publicacaooriginal-1-pl.html"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Aumento real do salário mínimo?",
+     "o": [
+      "Itamar",
+      "Dilma",
+      "Lula",
+      "Collor"
+     ],
+     "a": 2,
+     "e": "Lula: Regra negociada com as centrais: inflação mais crescimento do PIB. Dilma: A regra vira lei (12.382) e é renovada até 2019. Lula: A regra volta pela Lei 14.663/2023; a Lei 15.077/2024 passa a limitar o ganho real entre 0,6% e 2,5% em 2025–2030.",
+     "s": [
+      [
+       "DIEESE",
+       "https://www.dieese.org.br/livro/2010/SMinstrumentoCombateDesigualdade/17.html"
+      ],
+      [
+       "Lei 12.382/2011",
+       "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12382.htm"
+      ],
+      [
+       "Diário do Nordeste",
+       "https://diariodonordeste.verdesmares.com.br/negocios/bolsonaro-confirma-salario-minimo-de-r-1212-para-2022-sera-o-3-ano-sem-ganho-real-1.3176122"
+      ],
+      [
+       "Lei 14.663/2023",
+       "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: SUS?",
+     "o": [
+      "Dilma",
+      "Constituinte de 1988",
+      "Bolsonaro",
+      "Temer"
+     ],
+     "a": 1,
+     "e": "Constituinte de 1988: Criado pela Constituição de 1988.",
+     "s": [
+      [
+       "Constituição",
+       "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+      ],
+      [
+       "Lei 8.080/1990",
+       "https://www.planalto.gov.br/ccivil_03/leis/l8080.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Remédios genéricos?",
+     "o": [
+      "Dilma",
+      "Constituinte de 1988",
+      "Itamar",
+      "FHC"
+     ],
+     "a": 3,
+     "e": "FHC: Lei 9.787, com José Serra no Ministério da Saúde.",
+     "s": [
+      [
+       "Lei 9.787/1999",
+       "https://www.planalto.gov.br/ccivil_03/leis/l9787.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: SAMU 192?",
+     "o": [
+      "Sarney",
+      "Lula",
+      "Constituinte de 1988",
+      "Temer"
+     ],
+     "a": 1,
+     "e": "Lula: Atendimento móvel de urgência.",
+     "s": [
+      [
+       "Agência Senado",
+       "https://www12.senado.leg.br/noticias/materias/2024/05/29/congresso-celebrara-20-anos-do-samu-em-sessao-solene"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Farmácia Popular?",
+     "o": [
+      "Lula",
+      "FHC",
+      "Itamar",
+      "Temer"
+     ],
+     "a": 0,
+     "e": "Lula: Remédios baratos ou gratuitos. Lei 10.858.",
+     "s": [
+      [
+       "Lei 10.858/2004",
+       "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l10.858.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Brasil Sorridente?",
+     "o": [
+      "Lula",
+      "Sarney",
+      "Temer",
+      "Collor"
+     ],
+     "a": 0,
+     "e": "Lula: Dentista no SUS.",
+     "s": [
+      [
+       "Agência Gov",
+       "https://agenciagov.ebc.com.br/noticias/202403/brasil-sorridente-pais-celebra-20-anos-da-politica-nacional-de-saude-bucal"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Mais Médicos?",
+     "o": [
+      "Dilma",
+      "Temer",
+      "Itamar",
+      "Sarney"
+     ],
+     "a": 0,
+     "e": "Dilma: Médicos para cidades sem atendimento. MP 621.",
+     "s": [
+      [
+       "MP 621/2013",
+       "https://planalto.gov.br/ccivil_03/_Ato2011-2014/2013/Mpv/mpv621.htm"
+      ],
+      [
+       "Lei 13.958/2019",
+       "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/L13958.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Fundef → Fundeb?",
+     "o": [
+      "Lula",
+      "Bolsonaro",
+      "Dilma",
+      "FHC"
+     ],
+     "a": 3,
+     "e": "FHC: Fundef: dinheiro garantido para o ensino fundamental. Lula: Fundeb inclui creche, pré-escola e ensino médio.",
+     "s": [
+      [
+       "Emenda 14/1996",
+       "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc14.htm"
+      ],
+      [
+       "Lei 11.494/2007",
+       "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/lei/l11494.htm"
+      ],
+      [
+       "Emenda 108/2020",
+       "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc108.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: FIES?",
+     "o": [
+      "Lula",
+      "Constituinte de 1988",
+      "FHC",
+      "Sarney"
+     ],
+     "a": 2,
+     "e": "FHC: FIES criado em 1999, com antecedente no crédito educativo; ampliado em governos posteriores.",
+     "s": [
+      [
+       "Poder360",
+       "https://www.poder360.com.br/educacao/fies-foi-criado-no-governo-de-fhc-nao-na-gestao-lula/"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: ProUni?",
+     "o": [
+      "Lula",
+      "Temer",
+      "Itamar",
+      "FHC"
+     ],
+     "a": 0,
+     "e": "Lula: Bolsas em faculdades privadas em troca de isenção de impostos.",
+     "s": [
+      [
+       "MP 213/2004",
+       "https://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2004/Mpv/213impressao.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Pronatec?",
+     "o": [
+      "Dilma",
+      "FHC",
+      "Constituinte de 1988",
+      "Temer"
+     ],
+     "a": 0,
+     "e": "Dilma: Cursos técnicos e de qualificação.",
+     "s": [
+      [
+       "Lei 12.513/2011",
+       "https://www.senaipr.org.br/transparencia/estrutura-competencias-e-legislacao/uploadAddress/Lei-n-12513-2011[89871].pdf"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Cotas nas universidades federais?",
+     "o": [
+      "Constituinte de 1988",
+      "Collor",
+      "Dilma",
+      "Temer"
+     ],
+     "a": 2,
+     "e": "Dilma: Lei 12.711: metade das vagas para quem estudou em escola pública, com recorte de renda e raça.",
+     "s": [
+      [
+       "Lei 12.711/2012",
+       "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12711.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Pé-de-Meia?",
+     "o": [
+      "Lula",
+      "Bolsonaro",
+      "Dilma",
+      "Temer"
+     ],
+     "a": 0,
+     "e": "Lula: Poupança para manter estudantes no ensino médio.",
+     "s": [
+      [
+       "Migalhas",
+       "https://www.migalhas.com.br/quentes/400456/pe-de-meia-lei-cria-poupanca-para-estudantes-do-ensino-medio"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Minha Casa Minha Vida?",
+     "o": [
+      "Lula",
+      "Collor",
+      "Itamar",
+      "Temer"
+     ],
+     "a": 0,
+     "e": "Lula: Moradia popular. Lei 11.977. Bolsonaro: Substituído pelo Casa Verde e Amarela, com mudanças de financiamento e regras. Lula: Relançado como Minha Casa Minha Vida, com alterações de regras e público.",
+     "s": [
+      [
+       "Lei 11.977/2009",
+       "https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l11977.htm"
+      ],
+      [
+       "Agência Senado",
+       "https://www12.senado.leg.br/noticias/materias/2021/01/13/programa-casa-verde-e-amarela-e-sancionado-com-veto-a-unificacao-de-tributos"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Cisternas no semiárido?",
+     "o": [
+      "Collor",
+      "Lula",
+      "FHC",
+      "Bolsonaro"
+     ],
+     "a": 1,
+     "e": "Lula: Programa federal de cisternas, a partir de uma iniciativa da sociedade civil.",
+     "s": [
+      [
+       "NSC Total",
+       "https://www.nsctotal.com.br/?p=2346739"
+      ],
+      [
+       "Revista BNB",
+       "https://www.bnb.gov.br/revista/ren/article/download/523/411/1096"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Regularização fundiária urbana (Reurb)?",
+     "o": [
+      "Dilma",
+      "Itamar",
+      "Bolsonaro",
+      "Temer"
+     ],
+     "a": 3,
+     "e": "Temer: Lei 13.465.",
+     "s": [
+      [
+       "Lei 13.465/2017",
+       "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13465.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Pronaf (agricultura familiar)?",
+     "o": [
+      "FHC",
+      "Collor",
+      "Constituinte de 1988",
+      "Dilma"
+     ],
+     "a": 0,
+     "e": "FHC: Crédito para a agricultura familiar.",
+     "s": [
+      [
+       "Decreto 1.946/1996",
+       "https://www2.camara.leg.br/legin/fed/decret/1996/decreto-1946-28-junho-1996-435815-publicacaooriginal-1-pe.html"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: PAA (compra da agricultura familiar)?",
+     "o": [
+      "Dilma",
+      "Sarney",
+      "Lula",
+      "Collor"
+     ],
+     "a": 2,
+     "e": "Lula: Compra pública de alimentos da agricultura familiar. Bolsonaro: Substituído pelo Alimenta Brasil, Lei 14.284/2021. Lula: PAA recriado em março de 2023 e confirmado pela Lei 14.628/2023.",
+     "s": [
+      [
+       "Ipea",
+       "https://repositorio.ipea.gov.br/bitstream/11058/10296/1/td_2606.pdf"
+      ],
+      [
+       "MDS: substituição e recriação do PAA",
+       "https://www.gov.br/mds/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/programas-de-aquisicao-de-alimentos-cisternas-e-bolsa-familia-completam-20-anos-com-a-missao-de-tirar-o-pais-novamente-do-mapa-da-fome"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: MEI (microempreendedor individual)?",
+     "o": [
+      "Constituinte de 1988",
+      "Bolsonaro",
+      "FHC",
+      "Lula"
+     ],
+     "a": 3,
+     "e": "Lula: Lei Complementar 128: CNPJ simples para quem trabalha por conta própria.",
+     "s": [
+      [
+       "Lei Complementar 128/2008",
+       "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp128.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Desenrola Brasil?",
+     "o": [
+      "Lula",
+      "Sarney",
+      "Itamar",
+      "Temer"
+     ],
+     "a": 0,
+     "e": "Lula: Fase original; encerrada em 20 de maio de 2024. Lula: Novo Desenrola: mobilização inicial de 90 dias a partir de 4 de maio. Modalidades e eventuais prorrogações têm prazos próprios.",
+     "s": [
+      [
+       "Lei 14.690/2023",
+       "https://legis.senado.leg.br/norma/37685971"
+      ],
+      [
+       "Fazenda: fim da fase original",
+       "https://agenciagov.ebc.com.br/noticias/202406/criminosos-usam-nome-do-desenrola-brasil-encerrado-em-maio-para-aplicar-golpes"
+      ],
+      [
+       "FGTS: novo programa em 2026",
+       "https://www.fgts.gov.br/Paginas/saque-mp-1355-2026.aspx"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Estatuto da Criança e do Adolescente?",
+     "o": [
+      "Constituinte de 1988",
+      "FHC",
+      "Collor",
+      "Dilma"
+     ],
+     "a": 2,
+     "e": "Collor: Lei 8.069.",
+     "s": [
+      [
+       "Lei 8.069/1990",
+       "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Estatuto do Idoso?",
+     "o": [
+      "Dilma",
+      "Constituinte de 1988",
+      "Temer",
+      "Lula"
+     ],
+     "a": 3,
+     "e": "Lula: Lei 10.741.",
+     "s": [
+      [
+       "Lei 10.741/2003",
+       "https://www.planalto.gov.br/ccivil_03/leis/2003/l10.741.htm"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Lei Maria da Penha?",
+     "o": [
+      "Constituinte de 1988",
+      "Temer",
+      "Lula",
+      "Itamar"
+     ],
+     "a": 2,
+     "e": "Lula: Contra a violência doméstica.",
+     "s": [
+      [
+       "PT",
+       "https://pt.org.br/sancionada-por-lula-lei-maria-da-penha-completa-10-anos/"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Estatuto da Igualdade Racial?",
+     "o": [
+      "Constituinte de 1988",
+      "FHC",
+      "Dilma",
+      "Lula"
+     ],
+     "a": 3,
+     "e": "Lula: Lei 12.288.",
+     "s": [
+      [
+       "LegisWeb",
+       "https://www.legisweb.com.br/noticia/?id=621"
+      ]
+     ]
+    },
+    {
+     "q": "Quem criou: Estatuto da Pessoa com Deficiência?",
+     "o": [
+      "FHC",
+      "Bolsonaro",
+      "Dilma",
+      "Collor"
+     ],
+     "a": 2,
+     "e": "Dilma: Lei Brasileira de Inclusão.",
+     "s": [
+      [
+       "Correio da Manhã",
+       "https://www.correiodamanha.com.br/nacional/2025/07/208286-estatuto-da-pessoa-com-deficiencia-faz-10-anos.html"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "boato",
+   "title": "Frases da campanha",
+   "how": "leia a frase que circula e diga se é Verdade, Meia verdade, Falso ou Sem prova.",
+   "n": 4,
+   "items": [
+    {
+     "c": "O SUS é do PT",
+     "v": "f",
+     "e": "O SUS foi criado pela Constituição de 1988 e regulamentado em 1990. Os governos seguintes, inclusive os do PT, financiaram e ampliaram.",
+     "s": [
+      [
+       "Constituição",
+       "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+      ],
+      [
+       "Lei 8.080/1990",
+       "https://www.planalto.gov.br/ccivil_03/leis/l8080.htm"
+      ]
+     ],
+     "who": "Circula a favor do PT"
+    },
+    {
+     "c": "A aposentadoria rural e o BPC são do Lula",
+     "v": "f",
+     "e": "Os dois estão na Constituição de 1988. A aposentadoria rural foi regulamentada em 1991 e o BPC começou a ser pago em 1996.",
+     "s": [
+      [
+       "Constituição",
+       "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+      ],
+      [
+       "Lei 8.213/1991",
+       "https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm"
+      ],
+      [
+       "Câmara: estudo sobre o BPC",
+       "https://www2.camara.leg.br/orcamento-da-uniao/estudos/2019/et39_2019-beneficio-de-prestacao-continuada-bpc"
+      ]
+     ],
+     "who": "Circula a favor do PT"
+    },
+    {
+     "c": "O FIES é do Lula",
+     "v": "f",
+     "e": "Criado em 1999, no governo FHC. Cresceu muito com Lula e principalmente com Dilma.",
+     "s": [
+      [
+       "Poder360",
+       "https://www.poder360.com.br/educacao/fies-foi-criado-no-governo-de-fhc-nao-na-gestao-lula/"
+      ]
+     ],
+     "who": "Circula a favor do PT"
+    },
+    {
+     "c": "Com o PT o salário mínimo subiu acima da inflação",
+     "v": "v",
+     "e": "A regra de inflação mais PIB foi negociada no governo Lula e virou lei no governo Dilma.",
+     "s": [
+      [
+       "DIEESE",
+       "https://www.dieese.org.br/livro/2010/SMinstrumentoCombateDesigualdade/17.html"
+      ],
+      [
+       "Lei 12.382/2011",
+       "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12382.htm"
+      ]
+     ],
+     "who": "Circula a favor do PT"
+    },
+    {
+     "c": "O Bolsa Família é do FHC, Lula só mudou o nome",
+     "v": "m",
+     "e": "Lula juntou programas criados pelo FHC, mas o Bolsa Família foi um programa novo, criado por lei em 2004, com regras e alcance diferentes.",
+     "s": [
+      [
+       "Lei 10.836/2004",
+       "https://www2.camara.leg.br/legin/fed/lei/2004/lei-10836-9-janeiro-2004-490604-norma-pl.html"
+      ],
+      [
+       "Wikipedia: Bolsa Família",
+       "https://en.wikipedia.org/wiki/Bolsa_Fam%C3%ADlia"
+      ]
+     ],
+     "who": "Circula contra o PT"
+    },
+    {
+     "c": "No terceiro mandato Lula só relançou programas",
+     "v": "m",
+     "e": "Relançou Bolsa Família, Minha Casa Minha Vida e Mais Médicos, mas também criou Pé-de-Meia, Desenrola e Gás do Povo, e aprovou a isenção do IR até R$ 5 mil.",
+     "s": [
+      [
+       "Agência Câmara",
+       "https://www.camara.leg.br/noticias/973711-SANCIONADA-LEI-QUE-RECRIA-O-PROGRAMA-BOLSA-FAMILIA"
+      ],
+      [
+       "Migalhas",
+       "https://www.migalhas.com.br/quentes/400456/pe-de-meia-lei-cria-poupanca-para-estudantes-do-ensino-medio"
+      ],
+      [
+       "Lei 14.690/2023",
+       "https://legis.senado.leg.br/norma/37685971"
+      ],
+      [
+       "Congresso em Foco",
+       "https://www.congressoemfoco.com.br/noticia/116449/com-sancao-de-lula-programa-gas-do-povo-e-convertido-em-lei"
+      ],
+      [
+       "CNN Brasil",
+       "https://www.cnnbrasil.com.br/politica/lula-sanciona-isencao-do-ir-para-quem-ganha-ate-r-5-mil/"
+      ]
+     ],
+     "who": "Circula contra o PT"
+    },
+    {
+     "c": "O Pix é do Bolsonaro",
+     "v": "m",
+     "e": "O Pix é do Banco Central. As bases foram definidas em 2018, no governo Temer, e o sistema entrou no ar em novembro de 2020, no governo Bolsonaro.",
+     "s": [
+      [
+       "NSC Total / Comprova",
+       "https://www.nsctotal.com.br/?p=2437418"
+      ],
+      [
+       "Diário do Grande ABC",
+       "https://www.dgabc.com.br/Noticia/4246612/bases-do-pix-foram-definidas-pelo-bc-em-2018-no-fim-do-governo-temer"
+      ]
+     ],
+     "who": "Circula a favor de Bolsonaro"
+    },
+    {
+     "c": "Os R$ 600 do Auxílio Emergencial foram ideia do Bolsonaro",
+     "v": "f",
+     "e": "O governo propôs R$ 200. O Congresso aprovou R$ 600 e Bolsonaro sancionou.",
+     "s": [
+      [
+       "Congresso em Foco",
+       "https://congressoemfoco.com.br/saude/senado-aprova-auxilio-emergencial-de-r-600-para-trabalhadores-informais"
+      ]
+     ],
+     "who": "Circula a favor de Bolsonaro"
+    },
+    {
+     "c": "Bolsonaro pagou R$ 600 no Bolsa Família",
+     "v": "m",
+     "e": "O Auxílio Brasil chegou a R$ 600 em agosto de 2022, ano de eleição. Em 2023 o valor virou mínimo fixo por lei, já com Lula.",
+     "s": [
+      [
+       "Wikipedia: Bolsa Família",
+       "https://en.wikipedia.org/wiki/Bolsa_Fam%C3%ADlia"
+      ],
+      [
+       "Agência Câmara",
+       "https://www.camara.leg.br/noticias/973711-SANCIONADA-LEI-QUE-RECRIA-O-PROGRAMA-BOLSA-FAMILIA"
+      ]
+     ],
+     "who": "Circula a favor de Bolsonaro"
+    },
+    {
+     "c": "Bolsonaro acabou com o Bolsa Família e o Minha Casa Minha Vida",
+     "v": "m",
+     "e": "Trocou os nomes para Auxílio Brasil e Casa Verde e Amarela e mudou regras. Os programas de renda e moradia continuaram existindo.",
+     "s": [
+      [
+       "Agência Senado",
+       "https://www12.senado.leg.br/noticias/materias/2021/01/13/programa-casa-verde-e-amarela-e-sancionado-com-veto-a-unificacao-de-tributos"
+      ],
+      [
+       "Wikipedia: Bolsa Família",
+       "https://en.wikipedia.org/wiki/Bolsa_Fam%C3%ADlia"
+      ]
+     ],
+     "who": "Circula contra Bolsonaro"
+    },
+    {
+     "c": "Bolsonaro não deu aumento real no salário mínimo",
+     "v": "v",
+     "e": "De 2020 a 2022 o mínimo foi corrigido só pela inflação, sem ganho real.",
+     "s": [
+      [
+       "Diário do Nordeste",
+       "https://diariodonordeste.verdesmares.com.br/negocios/bolsonaro-confirma-salario-minimo-de-r-1212-para-2022-sera-o-3-ano-sem-ganho-real-1.3176122"
+      ]
+     ],
+     "who": "Circula contra Bolsonaro"
+    }
+   ]
+  }
+ ],
+ "ranks": [
+  [
+   0,
+   "Registrou o filho no nome errado."
+  ],
+  [
+   40,
+   "Exame inconclusivo."
+  ],
+  [
+   65,
+   "Perito de cartório."
+  ],
+  [
+   90,
+   "99,9% de certeza: você sabe quem é o pai."
+  ]
+ ],
+ "quips": {
+  "ok": [
+   "Isso! Pode publicar.",
+   "Na mosca. A fonte agradece.",
+   "Acertou. O grupo da família vai ter que engolir.",
+   "Boa! Checador raiz."
+  ],
+  "no": [
+   "Errou. Mas pelo menos você não compartilhou.",
+   "Quase. Leia a explicação antes de mandar no zap.",
+   "Não foi dessa vez. Acontece até com jornalista.",
+   "Ops. A tia do zap venceu essa."
+  ]
+ },
+ "full": "index.html",
+ "updated": "Rotas · Rota Esplanada"
+};
+</script>
+<script src="https://fcarvalhodev.github.io/rotas/jogos/jogo.js"></script>
+</body></html>
