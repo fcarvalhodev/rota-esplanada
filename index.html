@@ -104,6 +104,9 @@ section{grid-template-columns:minmax(0,1fr)}
 .gov .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 
 /* how a program is born */
+.pix14{display:flex;flex-wrap:wrap;gap:6px;font-size:30px;line-height:1;margin:6px 0 2px}
+.pix14 span{filter:grayscale(1);opacity:.35}.pix14 span.on{filter:none;opacity:1}
+.why{margin:0;padding-left:20px;display:grid;gap:8px}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:16px 18px;display:grid;gap:8px;align-content:start}
 .card .n{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:44px;color:var(--accent);line-height:.9}
@@ -171,6 +174,37 @@ footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;ga
   </div>
 </section>
 
+<section aria-labelledby="h-pixmei">
+  <h2 id="h-pixmei">Pix MEI: todo MEI vai ganhar R$ 5 mil?</h2>
+  <p class="sub">Não. Em 13 de outubro de 2026, a 12 dias do 2º turno, Lula anunciou o Pix MEI: até R$ 5 mil, sem precisar devolver, para o microempreendedor comprar equipamento. Mas o dinheiro dá para uma parte pequena dos MEIs, e as regras ainda não saíram.</p>
+  <div class="card">
+    <h3>De cada 14 MEIs, cabe 1</h3>
+    <div class="pix14" role="img" aria-label="14 pessoas, só 1 destacada"><span class="on">🧑‍💼</span><span>🧑‍💼</span><span>🧑‍💼</span><span>🧑‍💼</span><span>🧑‍💼</span><span>🧑‍💼</span><span>🧑‍💼</span><span>🧑‍💼</span><span>🧑‍💼</span><span>🧑‍💼</span><span>🧑‍💼</span><span>🧑‍💼</span><span>🧑‍💼</span><span>🧑‍💼</span></div>
+    <p>O plano tem <b>R$ 5 bilhões</b> para até <b>1 milhão de MEIs</b>, de 2027 a 2030. O Brasil tem cerca de <b>13,8 milhões de MEIs ativos</b>; o governo fala em mais de 17 milhões, contando outros cadastros. Se os R$ 5 bilhões fossem divididos entre todos, daria <b>R$ 363</b> para cada um. Para dar R$ 5 mil a todos, seriam quase R$ 69 bilhões.</p>
+    <span class="src"><a href="https://www.poder360.com.br/poder-economia/pix-para-meis-daria-r-363-com-distribuicao-igualitaria/" target="_blank" rel="noopener">Poder360: a conta dos R$ 363</a><a href="https://www.poder360.com.br/poder-governo/lula-chama-pix-mei-de-doacao-do-governo/" target="_blank" rel="noopener">Poder360: limite de 1 milhão</a></span>
+  </div>
+  <div class="cards" style="margin-top:12px">
+    <div class="card"><span class="n">1</span><h3>Prioridade não é garantia</h3><p>O governo disse que vai dar prioridade a mulheres e a MEIs que faturam até R$ 40,5 mil por ano. Ter o CNPJ em dia, sozinho, não garante os R$ 5 mil.</p><span class="src"><a href="https://www.cnnbrasil.com.br/economia/money/macroeconomia/perdao-de-dividas-e-pix-de-r-5-mil-veja-tudo-sobre-o-pacote-para-meis/" target="_blank" rel="noopener">CNN Brasil</a><a href="https://www.terra.com.br/noticias/quem-vai-poder-receber-o-pix-mei-quando-vai-comecar,c587a9bdda659522ea7952ac177be99bpozjhw4w.html" target="_blank" rel="noopener">Terra</a></span></div>
+    <div class="card"><span class="n">2</span><h3>Ainda não tem regra nem cadastro</h3><p>Até agora não saíram critérios, documentos nem calendário. O pagamento está previsto a partir de 2027. As reportagens não batem sobre a lei: a CNN diz que o Pix MEI está no projeto sancionado em 21 de outubro; outras dizem que ele ainda depende de um projeto que só iria ao Congresso depois da eleição.</p><span class="src"><a href="https://www.terra.com.br/noticias/quem-vai-poder-receber-o-pix-mei-quando-vai-comecar,c587a9bdda659522ea7952ac177be99bpozjhw4w.html" target="_blank" rel="noopener">Terra</a><a href="https://sbtnews.sbt.com.br/noticia/economia/a-12-dias-do-2-turno-lula-vai-distribuir-r-5-mil-a-me-is" target="_blank" rel="noopener">SBT News</a><a href="https://www.cnnbrasil.com.br/economia/money/macroeconomia/perdao-de-dividas-e-pix-de-r-5-mil-veja-tudo-sobre-o-pacote-para-meis/" target="_blank" rel="noopener">CNN Brasil</a></span></div>
+    <div class="card"><span class="n">3</span><h3>Cuidado com golpe</h3><p>Se ninguém pode se cadastrar ainda, mensagem prometendo liberar o Pix antes, ainda mais pedindo taxa, é golpe. Fique de olho só no Portal do Empreendedor, do governo.</p><span class="src"><a href="https://www.terra.com.br/noticias/quem-vai-poder-receber-o-pix-mei-quando-vai-comecar,c587a9bdda659522ea7952ac177be99bpozjhw4w.html" target="_blank" rel="noopener">Terra</a></span></div>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <h3>Por que tanta gente acha que todo MEI vai receber?</h3>
+    <ul class="why">
+      <li><b>O nome.</b> “Pix MEI” parece um Pix para todo MEI, como se bastasse ter o CNPJ.</li>
+      <li><b>O jeito de anunciar.</b> O anúncio falou em “até R$ 5 mil” para o microempreendedor, e depois Lula chamou o dinheiro de “doação do governo”. Nas primeiras notícias, o número de vagas nem aparecia; o limite de 1 milhão veio depois, nos detalhes.</li>
+      <li><b>As manchetes.</b> Títulos como “Governo vai depositar Pix de R$ 5 mil na conta de 1 milhão de MEIs” viram, no zap, “o governo vai depositar na conta dos MEIs”. O “1 milhão” some no caminho.</li>
+      <li><b>O vazio de regras.</b> Sem critério publicado, cada um completa do seu jeito, e o golpista aproveita.</li>
+    </ul>
+    <span class="src"><a href="https://www.poder360.com.br/poder-governo/lula-chama-pix-mei-de-doacao-do-governo/" target="_blank" rel="noopener">Poder360: “doação do governo”</a><a href="https://www.bandab.com.br/economia/governo-federal-vai-depositar-pix-de-5-mil-reais-na-conta-de-1-milhao-de-meis-veja-quando-comecam-os-pagamentos/" target="_blank" rel="noopener">Exemplo de manchete: Band B</a></span>
+  </div>
+  <div class="card" style="margin-top:12px">
+    <h3>E a eleição?</h3>
+    <p>O anúncio veio 12 dias antes do 2º turno, mas o dinheiro só sai a partir de 2027, porque a lei eleitoral impede criar esse tipo de programa em ano de eleição. Que o anúncio tenha mirado voto é a leitura de críticos, não algo provado. E não é coisa de um lado só: em 2022, também ano de eleição, o Auxílio Brasil de Bolsonaro subiu para R$ 600 em agosto.</p>
+    <span class="src"><a href="https://www.poder360.com.br/poder-economia/pix-para-meis-daria-r-363-com-distribuicao-igualitaria/" target="_blank" rel="noopener">Poder360: promessa para 2027</a><a href="https://sbtnews.sbt.com.br/noticia/economia/a-12-dias-do-2-turno-lula-vai-distribuir-r-5-mil-a-me-is" target="_blank" rel="noopener">SBT News: a 12 dias do 2º turno</a></span>
+  </div>
+</section>
+
 <section aria-labelledby="h-mitos">
   <h2 id="h-mitos">É verdade?</h2>
   <p class="sub">Frases que aparecem dos dois lados, checadas com o mesmo critério.</p>
@@ -184,7 +218,7 @@ footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;ga
     <ul>
       <li><b>Constituição de 1988:</b> SUS, BPC e aposentadoria rural de um salário mínimo.</li>
       <li><b>FHC:</b> Fundef, FIES, Pronaf, genéricos e os primeiros programas de renda, como o Bolsa Escola.</li>
-      <li><b>Lula:</b> Bolsa Família, ProUni, Minha Casa Minha Vida, Farmácia Popular, SAMU, Luz para Todos, MEI e Fundeb. No terceiro mandato, Pé-de-Meia, Desenrola, Gás do Povo e a isenção do IR até R$ 5 mil.</li>
+      <li><b>Lula:</b> Bolsa Família, ProUni, Minha Casa Minha Vida, Farmácia Popular, SAMU, Luz para Todos, MEI e Fundeb. No terceiro mandato, Pé-de-Meia, Desenrola, Gás do Povo e a isenção do IR até R$ 5 mil. O Pix MEI, anunciado em outubro de 2026, ainda não existe: é promessa para 2027, com vaga para 1 em cada 14 MEIs.</li>
       <li><b>Dilma:</b> Mais Médicos, Pronatec, cotas nas federais e a lei de valorização do salário mínimo.</li>
       <li><b>Bolsonaro:</b> Auxílio Emergencial (com o valor definido pelo Congresso), o novo Auxílio Gás e o Pix no ar. Também substituiu programas anteriores, com mudanças de nome e regras e não deu aumento real ao salário mínimo.</li>
     </ul>
@@ -194,7 +228,7 @@ footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;ga
 
 <footer>
   <p>A lista reúne os programas e benefícios federais mais citados no debate. Não é a lista completa de tudo o que cada governo fez. Cada item traz o link da lei, do documento oficial ou da reportagem de onde saiu.</p>
-  <p>Atualizado em 10 de outubro de 2026.</p>
+  <p>Atualizado em 26 de outubro de 2026.</p>
 </footer>
 
 <section id="fontes-revisao" aria-labelledby="h-fontes-revisao" style="margin-block:32px;padding:20px;border:1px solid var(--line);border-radius:6px">
@@ -227,6 +261,8 @@ const SRC={
   l12382:["Lei 12.382/2011","https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12382.htm"],
   smBolso:["Diário do Nordeste","https://diariodonordeste.verdesmares.com.br/negocios/bolsonaro-confirma-salario-minimo-de-r-1212-para-2022-sera-o-3-ano-sem-ganho-real-1.3176122"],
   l14663:["Lei 14.663/2023","https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14663.htm"],
+  pixmei363:["Poder360: a conta dos R$ 363","https://www.poder360.com.br/poder-economia/pix-para-meis-daria-r-363-com-distribuicao-igualitaria/"],
+  pixmeiTerra:["Terra: quem vai receber o Pix MEI","https://www.terra.com.br/noticias/quem-vai-poder-receber-o-pix-mei-quando-vai-comecar,c587a9bdda659522ea7952ac177be99bpozjhw4w.html"],
   ir5mil:["CNN Brasil","https://www.cnnbrasil.com.br/politica/lula-sanciona-isencao-do-ir-para-quem-ganha-ate-r-5-mil/"],
   sus:["Lei 8.080/1990","https://www.planalto.gov.br/ccivil_03/leis/l8080.htm"],
   genericos:["Lei 9.787/1999","https://www.planalto.gov.br/ccivil_03/leis/l9787.htm"],
@@ -378,6 +414,8 @@ const M=[
  ["Circula a favor do PT","“Com o PT o salário mínimo subiu acima da inflação”","ok","Verdade","A regra de inflação mais PIB foi negociada no governo Lula e virou lei no governo Dilma.",["dieese","l12382"]],
  ["Circula contra o PT","“O Bolsa Família é do FHC, Lula só mudou o nome”","part","Meia verdade","Lula juntou programas criados pelo FHC, mas o Bolsa Família foi um programa novo, criado por lei em 2004, com regras e alcance diferentes.",["l10836","wikiBF"]],
  ["Circula contra o PT","“No terceiro mandato Lula só relançou programas”","part","Meia verdade","Relançou Bolsa Família, Minha Casa Minha Vida e Mais Médicos, mas também criou Pé-de-Meia, Desenrola e Gás do Povo, e aprovou a isenção do IR até R$ 5 mil.",["bf2023","pdm","desenrola","gasPovo","ir5mil"]],
+ ["Circula nas redes","“Todo MEI vai ganhar um Pix de R$ 5 mil”","no","Falso","O plano tem R$ 5 bilhões para até 1 milhão de MEIs, de 2027 a 2030. O Brasil tem cerca de 13,8 milhões de MEIs ativos: cabe 1 em cada 14. Dividido entre todos, daria R$ 363 para cada um.",["pixmei363","pixmeiTerra"]],
+ ["Circula nas redes","“O Pix MEI já está liberado, é só se cadastrar”","no","Falso","Não há cadastro aberto nem regra publicada, e o pagamento está previsto a partir de 2027. Mensagem que promete liberar o dinheiro, ainda mais pedindo taxa, é golpe.",["pixmeiTerra"]],
  ["Circula a favor de Bolsonaro","“O Pix é do Bolsonaro”","part","Meia verdade","O Pix é do Banco Central. As bases foram definidas em 2018, no governo Temer, e o sistema entrou no ar em novembro de 2020, no governo Bolsonaro.",["pixNsc","pixTemer"]],
  ["Circula a favor de Bolsonaro","“Os R$ 600 do Auxílio Emergencial foram ideia do Bolsonaro”","no","Falso","O governo propôs R$ 200. O Congresso aprovou R$ 600 e Bolsonaro sancionou.",["auxEmerg"]],
  ["Circula a favor de Bolsonaro","“Bolsonaro pagou R$ 600 no Bolsa Família”","part","Meia verdade","O Auxílio Brasil chegou a R$ 600 em agosto de 2022, ano de eleição. Em 2023 o valor virou mínimo fixo por lei, já com Lula.",["wikiBF","bf2023"]],
